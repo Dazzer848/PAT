@@ -1,0 +1,19 @@
+BOOTING..........
+
+SecuirtyFirewall.exe                         Booted
+CentralLink                                      Established
+System64.exe                                  Booted
+
+
+---------------------------------------------- SYSTEM ONLINE -----------------------------------------
+
+Welcome Candidate!
+
+You have been accepted into the Systems Stability and Cybersecurity divsion. The ||||||| for short.
+
+On completion of these tasks you will be assgined a teacher who will help you.
+
+
+REMEBER: We always Monitor, Predict, Protect
+
+------------------------------------------- END TRANSMISSION -----------------------------------------
