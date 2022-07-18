@@ -4,7 +4,6 @@
  */
 package UIBootScreens;
 
-import Chapter1.Introduction;
 import backend.TextRenderer;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -108,10 +107,12 @@ public class BootUp extends javax.swing.JFrame {
 
     private void CheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckButtonActionPerformed
           
+           // This needs to not be hard coded
+          
           String ans = "SCS";  
           String in = AnswerTextField.getText();
           if (in == ans){
-              new Introduction().setVisible(true);
+
               dispose();
           }
 
