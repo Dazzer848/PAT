@@ -112,15 +112,16 @@ public class BootUp extends javax.swing.JFrame {
           
           String ans = "SCS";  
           String in = AnswerTextField.getText();
-          if (in.equals(ans)){
+          int level = 0;
+          
+          LevelSaver Saver = new LevelSaver("Data//LevelSaved.txt", level);
 
+          
+          if (in.equals(ans)){
+              
               dispose();
           }
           
-          int level = 1;
-          LevelSaver Saver = new LevelSaver("Data//LevelSaved.txt", level);
-
-
     }//GEN-LAST:event_CheckButtonActionPerformed
 
     private void printDisplayText() {
