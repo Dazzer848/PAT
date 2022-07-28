@@ -6,6 +6,7 @@ package UIBootScreens;
 
 import backend.LevelSaver;
 import backend.TextRenderer;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class BootUp extends javax.swing.JFrame {
     public BootUp() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText();
+        printDisplayText("Data//BootUpText.txt");
         
     }
 
@@ -112,21 +113,51 @@ public class BootUp extends javax.swing.JFrame {
           
           String ans = "SCS";  
           String in = AnswerTextField.getText();
-          int level = 0;
+          String level = "1";
           
-          LevelSaver Saver = new LevelSaver("Data//LevelSaved.txt", level);
 
           
-          if (in.equals(ans)){
+          if (in.equalsIgnoreCase(ans)){
               
+              
+              try {
+                  
+                  FileWriter Writer = new FileWriter("Data//LevelSaved.txt");
+                  Writer.write(level);
+                  Writer.close();
+                  
+                  
+              } catch (IOException ex) {
+                  Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+              }
               dispose();
+              // Add IN video!
+              new Puzzle1().setVisible(true);
           }
+          else {
+              
+              try {
+                  boolean Runnin = true;
+                  
+                  Thread.sleep(1000);
+                  printDisplayText("Data//IncorrectResponse.txt");
+                  // WAITS LIKE IT SHOULD BUT WILL NOT PRINT AGAIN.......
+                  
+              } catch (InterruptedException ex) {
+                  Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+              }
+              
+          }
+              
+
+                   
+          
           
     }//GEN-LAST:event_CheckButtonActionPerformed
 
-    private void printDisplayText() {
+    private void printDisplayText(String File) {
 
-        TextRenderer renderer = new TextRenderer(BootTextDisplay, 10, "Data//BootUpText.txt");
+        TextRenderer renderer = new TextRenderer(BootTextDisplay, 10, File);
 
         Thread thread = new Thread(renderer);
         thread.start();
