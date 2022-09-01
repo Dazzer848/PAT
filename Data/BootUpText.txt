@@ -1,8 +1,8 @@
 BOOTING..........
 
 SecuirtyFirewall.exe                         Booted
-CentralLink                                      Established
-System64.exe                                  Booted
+CentralLink                                        Established
+System64.exe                                   Booted
 
 
 ---------------------------------------------- SYSTEM ONLINE -----------------------------------------

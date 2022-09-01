@@ -4,20 +4,21 @@
  */
 package UIBootScreens;
 
-import backend.LevelSaver;
 import backend.TextRenderer;
 import java.awt.Desktop;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.io.*;
 
 /**
  *
  * @author darrenl
  */
+
+
 public class BootUp extends javax.swing.JFrame {
 
     /**
@@ -40,77 +41,66 @@ public class BootUp extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        BootTextDisplay = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
+        TextDisplay = new javax.swing.JTextArea();
         AnswerTextField = new javax.swing.JTextField();
-        CheckButton = new javax.swing.JButton();
+        AnswerCheckButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(800, 400));
-
-        BootTextDisplay.setEditable(false);
-        BootTextDisplay.setBackground(new java.awt.Color(0, 0, 0));
-        BootTextDisplay.setColumns(20);
-        BootTextDisplay.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        BootTextDisplay.setForeground(new java.awt.Color(51, 121, 8));
-        BootTextDisplay.setRows(5);
-        BootTextDisplay.setPreferredSize(new java.awt.Dimension(750, 360));
-        jScrollPane1.setViewportView(BootTextDisplay);
+        TextDisplay.setEditable(false);
+        TextDisplay.setBackground(new java.awt.Color(0, 0, 0));
+        TextDisplay.setColumns(20);
+        TextDisplay.setForeground(new java.awt.Color(0, 153, 0));
+        TextDisplay.setRows(5);
+        jScrollPane1.setViewportView(TextDisplay);
 
         AnswerTextField.setBackground(new java.awt.Color(0, 0, 0));
-        AnswerTextField.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        AnswerTextField.setForeground(new java.awt.Color(51, 121, 8));
-
-        CheckButton.setBackground(new java.awt.Color(0, 0, 0));
-        CheckButton.addActionListener(new java.awt.event.ActionListener() {
+        AnswerTextField.setForeground(new java.awt.Color(51, 102, 0));
+        AnswerTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckButtonActionPerformed(evt);
+                AnswerTextFieldActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(AnswerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(AnswerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(CheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        AnswerCheckButton.setBackground(new java.awt.Color(0, 0, 0));
+        AnswerCheckButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnswerCheckButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AnswerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AnswerCheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AnswerTextField)
+                    .addComponent(AnswerCheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckButtonActionPerformed
-          
-           // This needs to not be hard coded
-          
+    private void AnswerTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AnswerTextFieldActionPerformed
+
+    private void AnswerCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerCheckButtonActionPerformed
           String ans = "SCS";  
           String in = AnswerTextField.getText();
           String level = "1";
@@ -131,43 +121,43 @@ public class BootUp extends javax.swing.JFrame {
                   Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
               }
               dispose();
-              // Add IN video!
+              
+              
+            try {
+                
+                Desktop.getDesktop().open(new File("C:\\Users\\darrenl\\Desktop\\t.mp4"));
+                
+                Thread.sleep(10000);
+                
+                
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
               new Puzzle1().setVisible(true);
-          }
-          else {
-              
-              try {
-                  boolean Runnin = true;
-                  
-                  Thread.sleep(1000);
-                  printDisplayText("Data//IncorrectResponse.txt");
-                  // WAITS LIKE IT SHOULD BUT WILL NOT PRINT AGAIN.......
-                  
-              } catch (InterruptedException ex) {
-                  Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
-              }
-              
           }
               
 
                    
           
           
-    }//GEN-LAST:event_CheckButtonActionPerformed
+    }//GEN-LAST:event_AnswerCheckButtonActionPerformed
+        private void printDisplayText(String File) {
 
-    private void printDisplayText(String File) {
-
-        TextRenderer renderer = new TextRenderer(BootTextDisplay, 10, File);
+        TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);
 
         Thread thread = new Thread(renderer);
-        thread.start();
         
+        thread.start();
         
 
        
     }
-
-
 
     /**
      * @param args the command line arguments
@@ -186,37 +176,13 @@ public class BootUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BootUp
-
-
-
-.class
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BootUp
-
-
-
-.class
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BootUp
-
-
-
-.class
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BootUp
-
-
-
-.class
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -229,10 +195,9 @@ public class BootUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AnswerCheckButton;
     private javax.swing.JTextField AnswerTextField;
-    private javax.swing.JTextArea BootTextDisplay;
-    private javax.swing.JButton CheckButton;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea TextDisplay;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
