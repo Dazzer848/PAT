@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import backend.AnswerChecker;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -101,46 +103,23 @@ public class BootUp extends javax.swing.JFrame {
     }//GEN-LAST:event_AnswerTextFieldActionPerformed
 
     private void AnswerCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerCheckButtonActionPerformed
-          String ans = "SCS";  
-          String in = AnswerTextField.getText();
-          String level = "1";
+          int currentLevel = 1;
+          boolean currentStatus = false;
+          
+        try {    
+            AnswerChecker.checkAnswer(AnswerTextField.getText(), currentLevel, true, currentStatus);
+            if(currentStatus = true){
+                dispose();
+                
+                
+                
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+        }
           
 
-          
-          if (in.equalsIgnoreCase(ans)){
-              
-              
-              try {
-                  
-                  FileWriter Writer = new FileWriter("Data//LevelSaved.txt");
-                  Writer.write(level);
-                  Writer.close();
-                  
-                  
-              } catch (IOException ex) {
-                  Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
-              }
-              dispose();
-              
-              
-            try {
-                
-                Desktop.getDesktop().open(new File("C:\\Users\\darrenl\\Desktop\\t.mp4"));
-                
-                Thread.sleep(10000);
-                
-                
-                
-                
-            } catch (IOException ex) {
-                Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
-              new Puzzle1().setVisible(true);
-          }
+  
               
 
                    

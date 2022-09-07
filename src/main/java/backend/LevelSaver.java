@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,8 +34,9 @@ public class LevelSaver implements Runnable {
             Scanner LevelSc = new Scanner(LevelSaved);
             
             FileWriter Writer = new FileWriter("Data//LevelSaved.txt");
+            PrintWriter pw = new PrintWriter(Writer);
             
-            Writer.write(level);
+            pw.write(level);
             
             
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

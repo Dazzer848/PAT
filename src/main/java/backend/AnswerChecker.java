@@ -6,6 +6,7 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -15,36 +16,33 @@ import javax.swing.JTextField;
  * @author darrenl
  */
 // Need help to get it to work
-public class AnswerChecker implements Runnable {
+public class AnswerChecker {
 
-    JTextField jtf;
-
-    public AnswerChecker(JTextField in) {
-        jtf = in;
-    }
-
-    @Override
-    public void run() {
-
-        try {
-            File Answers = new File("Answers//Answers.txt");
-
+    public static boolean checkAnswer(String answer, int currentLevel, boolean input, boolean currentStatus) throws FileNotFoundException {
+            boolean response = false;
+            
+            // Setting Up Scanners And Files
+            File Answers = new File("Data//Answers.txt");
             Scanner AnsSC = new Scanner(Answers);
+            
+            File LevelSaved = new File("Data//LevelSaved.txt");
+            
+            PrintWriter levelSaver = new PrintWriter(LevelSaved);
 
             String Ans = AnsSC.next();
-
+            
+          
+            //Checking answer to see if it is right
             while (AnsSC.hasNextLine()) {
-                if(jtf == Ans){
-                   
-                }
+                    if(answer.equalsIgnoreCase(Ans)){
+                        levelSaver.print(currentLevel);
+                        response = true;
+                        break;
+                    
+                    }
             }
 
-
-        } 
-
-        catch (FileNotFoundException e) {
-
-        }
+return response;
     }
 
 }
