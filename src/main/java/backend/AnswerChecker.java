@@ -6,7 +6,9 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.Scanner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,32 +19,58 @@ import javax.swing.JTextField;
  */
 // Need help to get it to work
 public class AnswerChecker {
-
-    public static boolean checkAnswer(String answer, int currentLevel, boolean input, boolean currentStatus) throws FileNotFoundException {
-            boolean response = false;
+    public boolean AnswerChecker(String InputtedAnswer, boolean currentStatus, boolean CapsSensitive, int currentLevel) throws FileNotFoundException, IOException{
+        currentStatus = false;
+        
+        
+        File Answers = new File("PAT\\Data\\Answers.txt");
+        Scanner AnsC = new Scanner(Answers);
+        Writer writer = new Writer("PAT\\Data\\LevelSaved.txt") {
+           
             
-            // Setting Up Scanners And Files
-            File Answers = new File("Data//Answers.txt");
-            Scanner AnsSC = new Scanner(Answers);
             
-            File LevelSaved = new File("Data//LevelSaved.txt");
             
-            PrintWriter levelSaver = new PrintWriter(LevelSaved);
-
-            String Ans = AnsSC.next();
             
-          
-            //Checking answer to see if it is right
-            while (AnsSC.hasNextLine()) {
-                    if(answer.equalsIgnoreCase(Ans)){
-                        levelSaver.print(currentLevel);
-                        response = true;
-                        break;
-                    
-                    }
+            @Override
+            public void write(char[] cbuf, int off, int len) throws IOException {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
-return response;
-    }
+            @Override
+            public void flush() throws IOException {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
 
+            @Override
+            public void close() throws IOException {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        
+        
+        while(AnsC.hasNext()){
+            if(CapsSensitive = true){
+                if(InputtedAnswer.equals(AnsC.next())){
+                    writer.write(currentLevel);
+                    currentStatus = true;
+                    return currentStatus;
+                    
+                    
+                    
+                    
+                }
+                
+                else{
+                    currentStatus = false;
+                    return currentStatus;
+                }
+            }
+            
+            if(CapsSensitive = false){
+                if(InputtedAnswer.equalsIgnoreCase(AnsC.next))
+            }
+        }
+        
+    }
+    
 }
