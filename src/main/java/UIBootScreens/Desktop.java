@@ -57,7 +57,7 @@ public class Desktop extends javax.swing.JFrame {
 
         GmailButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Images\\Gmail-logo.png")); // NOI18N
 
-        PuzzleButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Images\\Puzzle LOGO.png")); // NOI18N
+        PuzzleButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Images\\Puzzle_Logo-removebg-preview.png")); // NOI18N
 
         TrainingProgramButton.setText("Training");
 
@@ -93,10 +93,10 @@ public class Desktop extends javax.swing.JFrame {
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PuzzleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TrainingProgramButton))
-                                    .addComponent(PuzzleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(15, 15, 15)
+                                        .addComponent(TrainingProgramButton)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -133,16 +133,17 @@ public class Desktop extends javax.swing.JFrame {
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
-                                .addGap(65, 65, 65)
                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                        .addComponent(PuzzleButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TrainingProgramButton))
-                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                        .addGap(65, 65, 65)
                                         .addComponent(GmailButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(GmailLabel)))))
+                                        .addComponent(GmailLabel))
+                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                        .addGap(42, 42, 42)
+                                        .addComponent(PuzzleButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TrainingProgramButton)))))
                         .addGap(46, 46, 46))))
         );
 
