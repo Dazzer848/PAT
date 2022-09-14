@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UIBootScreens;
+import backend.AccountManeger;
+import backend.TextRenderer;
 
 /**
  *
@@ -56,6 +58,11 @@ public class CreateAccount extends javax.swing.JFrame {
         jScrollPane1.setViewportView(DisplayTextArea);
 
         ContinueButton.setText("Continue");
+        ContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContinueButtonActionPerformed(evt);
+            }
+        });
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
@@ -184,6 +191,11 @@ public class CreateAccount extends javax.swing.JFrame {
     private void PasswordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordTextFieldActionPerformed
+
+    private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
+        
+
+    }//GEN-LAST:event_ContinueButtonActionPerformed
 
     /**
      * @param args the command line arguments

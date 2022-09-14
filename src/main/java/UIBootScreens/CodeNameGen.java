@@ -4,6 +4,10 @@
  */
 package UIBootScreens;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.plaf.IconUIResource;
+
 /**
  *
  * @author darrenl
@@ -15,6 +19,7 @@ public class CodeNameGen extends javax.swing.JFrame {
      */
     public CodeNameGen() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,9 +32,7 @@ public class CodeNameGen extends javax.swing.JFrame {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        NickNameLable = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        NickNameTextField = new javax.swing.JTextField();
         LenghtLabel = new javax.swing.JLabel();
         LenghtSpinner = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -37,14 +40,14 @@ public class CodeNameGen extends javax.swing.JFrame {
         SquadComboBox = new javax.swing.JComboBox<>();
         SquadLabel = new javax.swing.JLabel();
         SquadLogoLabel = new javax.swing.JLabel();
+        GenerateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel1.setkStartColor(new java.awt.Color(102, 102, 102));
 
-        NickNameLable.setText("Nickname:");
-
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("                                         CODE-NAME GENERATOR");
 
         LenghtLabel.setText("Length:");
@@ -53,7 +56,7 @@ public class CodeNameGen extends javax.swing.JFrame {
         DisplayTextArea.setRows(5);
         jScrollPane1.setViewportView(DisplayTextArea);
 
-        SquadComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALPHA", "BRAVO", "CHARLIE", "DELTA" }));
+        SquadComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Squad", "ALPHA", "BRAVO", "CHARLIE", "DELTA" }));
         SquadComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SquadComboBoxActionPerformed(evt);
@@ -62,20 +65,27 @@ public class CodeNameGen extends javax.swing.JFrame {
 
         SquadLabel.setText("Squad:");
 
-        SquadLogoLabel.setText("IMAGE");
+        GenerateButton.setText("GENERATE");
+        GenerateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerateButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SquadLogoLabel)
-                .addGap(134, 134, 134))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(58, 58, 58)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(364, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addComponent(SquadLogoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(GenerateButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(kGradientPanel1Layout.createSequentialGroup()
                     .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,34 +94,32 @@ public class CodeNameGen extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                             .addGap(68, 68, 68)
-                            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(NickNameLable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(LenghtLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(SquadLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(SquadComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NickNameTextField)
                                 .addComponent(LenghtSpinner))))
                     .addContainerGap(194, Short.MAX_VALUE)))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(149, 149, 149)
-                .addComponent(SquadLogoLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(75, 75, 75)
+                .addComponent(SquadLogoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(GenerateButton)
+                .addGap(30, 30, 30))
             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(kGradientPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jLabel1)
-                    .addGap(18, 18, 18)
-                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NickNameLable)
-                        .addComponent(NickNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGap(52, 52, 52)
                     .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(LenghtLabel)
                         .addComponent(LenghtSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -137,8 +145,54 @@ public class CodeNameGen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SquadComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SquadComboBoxActionPerformed
-        // TODO add your handling code here:
+        
+        
+        
+        String squad = (String) SquadComboBox.getSelectedItem();
+        
+        //it wants a direct file path idk why BUT IT WORKS IF IT HAS!
+        
+        ImageIcon AlphaSqaud = new ImageIcon("PAT\\Images\\Alpha Squad LOGO.jpg");
+        ImageIcon BravoSquad = new ImageIcon("PAT\\Images\\Bravo Squad LOGO.jpg");
+        ImageIcon CharlieSquad = new ImageIcon("PAT\\Images\\Charlie Squad LOGO.jpg");
+        ImageIcon DeltaSquad = new ImageIcon("PAT\\Images\\Delta Squad LOGO.jpg");
+        
+        if(squad.equalsIgnoreCase("ALPHA")){
+            SquadLogoLabel.setIcon(AlphaSqaud);
+        }
+        if(squad.equalsIgnoreCase("BRAVO")){
+            SquadLogoLabel.setIcon(BravoSquad);
+        }
+        if(squad.equalsIgnoreCase("CHARLIE")){
+            SquadLogoLabel.setIcon(CharlieSquad);
+        }
+        if(squad.equalsIgnoreCase("DELTA")){
+            SquadLogoLabel.setIcon(DeltaSquad);
+        }
+        
+        
     }//GEN-LAST:event_SquadComboBoxActionPerformed
+
+    private void GenerateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateButtonActionPerformed
+        int length = (int) LenghtSpinner.getValue();
+        String CodeName = "";
+        String squad = (String) SquadComboBox.getSelectedItem();
+        
+        if(squad.equals("Choose Squad")){
+            DisplayTextArea.setText("Please choose a squad");
+        }
+        else{
+            for(int i = 0; i < length; i++){
+                char Character = (char) (Math.random() * (90 - 65) + 65);
+                CodeName = CodeName + Character;
+                DisplayTextArea.setText(CodeName);
+                
+            }
+            
+            
+        }
+
+    }//GEN-LAST:event_GenerateButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,10 +232,9 @@ public class CodeNameGen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DisplayTextArea;
+    private javax.swing.JButton GenerateButton;
     private javax.swing.JLabel LenghtLabel;
     private javax.swing.JSpinner LenghtSpinner;
-    private javax.swing.JLabel NickNameLable;
-    private javax.swing.JTextField NickNameTextField;
     private javax.swing.JComboBox<String> SquadComboBox;
     private javax.swing.JLabel SquadLabel;
     private javax.swing.JLabel SquadLogoLabel;

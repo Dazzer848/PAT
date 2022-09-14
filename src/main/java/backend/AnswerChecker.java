@@ -6,6 +6,7 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
@@ -19,58 +20,38 @@ import javax.swing.JTextField;
  */
 // Need help to get it to work
 public class AnswerChecker {
-    public boolean AnswerChecker(String InputtedAnswer, boolean currentStatus, boolean CapsSensitive, int currentLevel) throws FileNotFoundException, IOException{
-        currentStatus = false;
-        
-        
-        File Answers = new File("PAT\\Data\\Answers.txt");
-        Scanner AnsC = new Scanner(Answers);
-        Writer writer = new Writer("PAT\\Data\\LevelSaved.txt") {
-           
-            
-            
-            
-            
-            @Override
-            public void write(char[] cbuf, int off, int len) throws IOException {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+    public static boolean checkAnswer(String Inpuutedanswer, boolean cap,int level) throws FileNotFoundException{
+        boolean result = false;
+        boolean capResult = false;
+        boolean nocapResult = false;
 
-            @Override
-            public void flush() throws IOException {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+        String answer = "";
 
-            @Override
-            public void close() throws IOException {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        };
-        
-        
-        while(AnsC.hasNext()){
-            if(CapsSensitive = true){
-                if(InputtedAnswer.equals(AnsC.next())){
-                    writer.write(currentLevel);
-                    currentStatus = true;
-                    return currentStatus;
-                    
-                    
-                    
-                    
-                }
-                
-                else{
-                    currentStatus = false;
-                    return currentStatus;
-                }
-            }
-            
-            if(CapsSensitive = false){
-                if(InputtedAnswer.equalsIgnoreCase(AnsC.next))
+        Scanner scan = new Scanner(new File("Data\\Answers.txt"));
+        PrintWriter writer = new PrintWriter(new File("Data\\LevelSaved.txt"));
+
+        for(int i = 0; i < level;i++){
+            if(scan.hasNextLine()){
+                answer = scan.nextLine();
             }
         }
-        
+        if(cap && answer.equalsIgnoreCase(Inpuutedanswer)){
+            writer.print(level + 1);
+            writer.flush();
+            return true;
+        }
+        else if(answer.equals(Inpuutedanswer)){
+            writer.print(level + 1);
+            writer.flush();
+            return true;
+        }
+
+        return result;
     }
-    
+
+    public static void checkAnswer(String text, boolean currentStatus, boolean b, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
+  

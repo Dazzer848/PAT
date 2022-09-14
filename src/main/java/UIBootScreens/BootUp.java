@@ -103,20 +103,20 @@ public class BootUp extends javax.swing.JFrame {
     }//GEN-LAST:event_AnswerTextFieldActionPerformed
 
     private void AnswerCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerCheckButtonActionPerformed
-          int currentLevel = 1;
+
           boolean currentStatus = false;
           
-        try {    
-            AnswerChecker.checkAnswer(AnswerTextField.getText(), currentLevel, true, currentStatus);
-            if(currentStatus = true){
-                dispose();
-                
-                
-                
-            }
+        try {
+            AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 1);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
         }
+          if(currentStatus = true){
+              dispose();
+              
+              
+              
+          }
           
 
   
