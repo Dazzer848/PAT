@@ -4,6 +4,10 @@
  */
 package UIBootScreens;
 
+import backend.TextRenderer;
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.plaf.IconUIResource;
@@ -52,6 +56,7 @@ public class CodeNameGen extends javax.swing.JFrame {
 
         LenghtLabel.setText("Length:");
 
+        DisplayTextArea.setEditable(false);
         DisplayTextArea.setColumns(20);
         DisplayTextArea.setRows(5);
         jScrollPane1.setViewportView(DisplayTextArea);
@@ -108,7 +113,7 @@ public class CodeNameGen extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(SquadLogoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,53 +152,58 @@ public class CodeNameGen extends javax.swing.JFrame {
     private void SquadComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SquadComboBoxActionPerformed
         
         
-        
         String squad = (String) SquadComboBox.getSelectedItem();
         
         //it wants a direct file path idk why BUT IT WORKS IF IT HAS!
         
-        ImageIcon AlphaSqaud = new ImageIcon("PAT\\Images\\Alpha Squad LOGO.jpg");
-        ImageIcon BravoSquad = new ImageIcon("PAT\\Images\\Bravo Squad LOGO.jpg");
-        ImageIcon CharlieSquad = new ImageIcon("PAT\\Images\\Charlie Squad LOGO.jpg");
-        ImageIcon DeltaSquad = new ImageIcon("PAT\\Images\\Delta Squad LOGO.jpg");
+        //ImageIcon AlphaSqaud = new ImageIcon("PAT\\src\\main\\resources\\Images\\Alpha Squad LOGO.jpg");
+        //ImageIcon BravoSquad = new ImageIcon("PAT\\src\\main\\resources\\Images\\Bravo Squad LOGO.jpg");
+        //ImageIcon CharlieSquad = new ImageIcon("PAT\\src\\main\\resources\\Images\\Charlie Squad LOGO.jpg");
+        //ImageIcon DeltaSquad = new ImageIcon("PAT\\src\\main\\resources\\Images\\Delta Squad LOGO.jpg");
         
         if(squad.equalsIgnoreCase("ALPHA")){
-            SquadLogoLabel.setIcon(AlphaSqaud);
+            SquadLogoLabel.setIcon(new ImageIcon("PAT\\src\\main\\resources\\Images\\Alpha Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("BRAVO")){
-            SquadLogoLabel.setIcon(BravoSquad);
+            SquadLogoLabel.setIcon( new ImageIcon("PAT\\src\\main\\resources\\Images\\Bravo Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("CHARLIE")){
-            SquadLogoLabel.setIcon(CharlieSquad);
+            SquadLogoLabel.setIcon(new ImageIcon("PAT\\src\\main\\resources\\Images\\Charlie Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("DELTA")){
-            SquadLogoLabel.setIcon(DeltaSquad);
+            SquadLogoLabel.setIcon( new ImageIcon("PAT\\src\\main\\resources\\Images\\Delta Squad LOGO.jpg"));
         }
         
         
     }//GEN-LAST:event_SquadComboBoxActionPerformed
 
     private void GenerateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateButtonActionPerformed
+        
         int length = (int) LenghtSpinner.getValue();
         String CodeName = "";
         String squad = (String) SquadComboBox.getSelectedItem();
-        
+        int CodeNameLimit = 10;
         if(squad.equals("Choose Squad")){
             DisplayTextArea.setText("Please choose a squad");
-        }
+
+            }
+            
+        
         else{
             for(int i = 0; i < length; i++){
                 char Character = (char) (Math.random() * (90 - 65) + 65);
                 CodeName = CodeName + Character;
                 DisplayTextArea.setText(CodeName);
+                GenerateButton.setVisible(false);
                 
             }
             
             
         }
+        
 
     }//GEN-LAST:event_GenerateButtonActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

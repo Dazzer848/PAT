@@ -4,12 +4,14 @@
  */
 package backend;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import backend.TextRenderer;
 
 /**
  *
@@ -21,7 +23,7 @@ import javax.swing.JTextField;
 public class AccountManeger {
      private JTextArea display;
      
-     public void AccountCreater(JTextArea in, String name, String surname, String password, String confirmPassword) throws IOException{
+     public void AccountCreater(JTextArea in, String name, String surname, String password, String confirmPassword) throws IOException, InterruptedException{
         
         
         
@@ -35,11 +37,17 @@ public class AccountManeger {
         
         while(AccountChecker.hasNext()){
             if(AccountChecker.next().equals(name) || AccountChecker.next().equals(surname) || AccountChecker.next().equals(password)){
-                display.setText("Your name, surname or password have already got an account linked to them");
+                display.setBackground(Color.red);
+                printDisplayText("Data\\AccountManegerDATA\\AccountTaken.txt");
+                wait(1000);
+                display.setBackground(Color.white);
+                display.setText("");
+                
             }
             else{
                 AccountWriter.write(name + "#" + surname + "#" + password);
-                display.setText("Your account has succesfully been created");
+                display.setBackground(Color.green);
+                printDisplayText("Data\\AccountManegerDATA\\AccountCreated.txt");
                 AccountWriter.close();
             }
 
@@ -48,5 +56,17 @@ public class AccountManeger {
     }
     
 }
+        private void printDisplayText(String File) {
+
+        TextRenderer renderer = new TextRenderer(display, 10, File);
+
+        Thread thread = new Thread(renderer);
+        
+        thread.start();
+        
+
+       
+    }
+
 }
 

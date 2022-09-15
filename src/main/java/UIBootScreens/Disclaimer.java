@@ -4,6 +4,11 @@
  */
 package UIBootScreens;
 
+import backend.TextRenderer;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author darrenl
@@ -15,6 +20,18 @@ public class Disclaimer extends javax.swing.JFrame {
      */
     public Disclaimer() {
         initComponents();
+        printDisplayText("Data\\NDA.txt");
+        LossOrHarm.setVisible(false);
+        Death.setVisible(false);
+        Painetc.setVisible(false);
+        LossOfLimbs.setVisible(false);
+        Censorship.setVisible(false);
+        ToHaveAGoodTime.setVisible(false);
+        Agree.setVisible(false);
+        jButton2.setVisible(false);
+        jButton3.setVisible(false);
+        jButton4.setVisible(false);
+        jButton5.setVisible(false);
     }
 
     /**
@@ -27,36 +44,51 @@ public class Disclaimer extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        DisplayTextArea = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        NDA = new javax.swing.JCheckBox();
+        LossOrHarm = new javax.swing.JCheckBox();
+        Death = new javax.swing.JCheckBox();
+        Painetc = new javax.swing.JCheckBox();
+        Agree = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
+        LossOfLimbs = new javax.swing.JCheckBox();
+        Censorship = new javax.swing.JCheckBox();
+        ToHaveAGoodTime = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        DisplayTextArea.setColumns(20);
+        DisplayTextArea.setRows(5);
+        jScrollPane1.setViewportView(DisplayTextArea);
 
-        jCheckBox2.setText("Our NDA");
+        NDA.setText("Our NDA");
+        NDA.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                NDAItemStateChanged(evt);
+            }
+        });
+        NDA.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                NDAStateChanged(evt);
+            }
+        });
+        NDA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NDAMouseClicked(evt);
+            }
+        });
 
-        jCheckBox1.setText("Loss Or Harm");
+        LossOrHarm.setText("Loss Or Harm");
 
-        jCheckBox3.setText("Death");
+        Death.setText("Death");
 
-        jCheckBox4.setText("Pain and Possible Murder");
+        Painetc.setText("Pain and Possible Murder");
 
-        jButton1.setText("AGREE");
+        Agree.setText("AGREE");
 
         jButton2.setText("AGREE");
 
@@ -66,16 +98,16 @@ public class Disclaimer extends javax.swing.JFrame {
 
         jButton5.setText("AGREE");
 
-        jCheckBox5.setText("Loss of Limbs");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        LossOfLimbs.setText("Loss of Limbs");
+        LossOfLimbs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                LossOfLimbsActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setText("Censorship");
+        Censorship.setText("Censorship");
 
-        jCheckBox7.setText("TO HAVE A GOOD TIME");
+        ToHaveAGoodTime.setText("TO HAVE A GOOD TIME");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,16 +120,16 @@ public class Disclaimer extends javax.swing.JFrame {
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NDA)
+                            .addComponent(LossOrHarm)
+                            .addComponent(Death)
+                            .addComponent(Painetc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -105,21 +137,21 @@ public class Disclaimer extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jCheckBox2)
+                .addComponent(NDA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(LossOrHarm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(Death)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(Painetc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox5)
+                .addComponent(LossOfLimbs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(Censorship)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jCheckBox7)
+                .addComponent(ToHaveAGoodTime)
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(Agree)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -153,10 +185,40 @@ public class Disclaimer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void LossOfLimbsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LossOfLimbsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_LossOfLimbsActionPerformed
 
+    private void NDAStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_NDAStateChanged
+        
+        
+        
+    }//GEN-LAST:event_NDAStateChanged
+
+    private void NDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NDAMouseClicked
+        try {
+            TimeUnit.SECONDS.sleep(3);
+            LossOrHarm.setVisible(true);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Disclaimer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_NDAMouseClicked
+
+    private void NDAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_NDAItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NDAItemStateChanged
+        private void printDisplayText(String File) {
+
+        TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
+
+        Thread thread = new Thread(renderer);
+        
+        thread.start();
+        
+
+       
+    }
     /**
      * @param args the command line arguments
      */
@@ -193,20 +255,20 @@ public class Disclaimer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Agree;
+    private javax.swing.JCheckBox Censorship;
+    private javax.swing.JCheckBox Death;
+    private javax.swing.JTextArea DisplayTextArea;
+    private javax.swing.JCheckBox LossOfLimbs;
+    private javax.swing.JCheckBox LossOrHarm;
+    private javax.swing.JCheckBox NDA;
+    private javax.swing.JCheckBox Painetc;
+    private javax.swing.JCheckBox ToHaveAGoodTime;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

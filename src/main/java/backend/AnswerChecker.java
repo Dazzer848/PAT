@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  *
  * @author darrenl
  */
-// Need help to get it to work
+// Need help to get it to work doesnt write to file!
 public class AnswerChecker {
     public static boolean checkAnswer(String Inpuutedanswer, boolean cap,int level) throws FileNotFoundException{
         boolean result = false;
@@ -36,21 +36,17 @@ public class AnswerChecker {
             }
         }
         if(cap && answer.equalsIgnoreCase(Inpuutedanswer)){
-            writer.print(level + 1);
+            writer.print(level);
             writer.flush();
             return true;
         }
         else if(answer.equals(Inpuutedanswer)){
-            writer.print(level + 1);
+            writer.print(level);
             writer.flush();
             return true;
         }
 
         return result;
-    }
-
-    public static void checkAnswer(String text, boolean currentStatus, boolean b, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
