@@ -43,6 +43,8 @@ public class TextRenderer implements Runnable {
                 jta.setText(out.substring(0, i));//message.charAt(i);
                 Thread.sleep(delay);
             }
+            
+            
 
         } catch (InterruptedException e) {
 
