@@ -5,6 +5,10 @@
 package UIBootScreens;
 import backend.AccountManeger;
 import backend.TextRenderer;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -193,10 +197,27 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordTextFieldActionPerformed
 
     private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
-        
+        try {
+            AccountManeger(DisplayTextArea, NameTextField.getText(), SurnameTextField.getText(), PasswordTextField.getText(), ConfirmTextField.getText(), true);
+        } catch (IOException ex) {
+            Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_ContinueButtonActionPerformed
-
+    
+    private void AccountManeger(JTextArea in, String name, String surname, String password, String confirmPassword, boolean Run) throws IOException, InterruptedException{
+        AccountManeger accountmaneger = new AccountManeger(DisplayTextArea, NameTextField.getText(), SurnameTextField.getText(), PasswordTextField.getText(), ConfirmTextField.getText(), Run);
+        Thread thread1 = new Thread(accountmaneger);
+        
+        if(Run = true){
+            thread1.start();
+        }
+        else{
+            thread1.stop();
+        }
+    }
     /**
      * @param args the command line arguments
      */

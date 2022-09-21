@@ -162,16 +162,16 @@ public class CodeNameGen extends javax.swing.JFrame {
         //ImageIcon DeltaSquad = new ImageIcon("PAT\\src\\main\\resources\\Images\\Delta Squad LOGO.jpg");
         
         if(squad.equalsIgnoreCase("ALPHA")){
-            SquadLogoLabel.setIcon(new ImageIcon("PAT\\src\\main\\resources\\Images\\Alpha Squad LOGO.jpg"));
+            SquadLogoLabel.setIcon(new ImageIcon("src\\main\\resources\\Images\\Alpha Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("BRAVO")){
-            SquadLogoLabel.setIcon( new ImageIcon("PAT\\src\\main\\resources\\Images\\Bravo Squad LOGO.jpg"));
+            SquadLogoLabel.setIcon( new ImageIcon("src\\main\\resources\\Images\\Bravo Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("CHARLIE")){
-            SquadLogoLabel.setIcon(new ImageIcon("PAT\\src\\main\\resources\\Images\\Charlie Squad LOGO.jpg"));
+            SquadLogoLabel.setIcon(new ImageIcon("src\\main\\resources\\Images\\Charlie Squad LOGO.jpg"));
         }
         if(squad.equalsIgnoreCase("DELTA")){
-            SquadLogoLabel.setIcon( new ImageIcon("PAT\\src\\main\\resources\\Images\\Delta Squad LOGO.jpg"));
+            SquadLogoLabel.setIcon( new ImageIcon("src\\main\\resources\\Images\\Delta Squad LOGO.jpg"));
         }
         
         
