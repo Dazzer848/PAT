@@ -23,104 +23,65 @@ import java.util.logging.Logger;
  *
  * @author user-pc
  */
-
 // CANT FIGURE OUT HOW TO CALL IT IN THE OTHER PROGRAM
+public class AccountManeger {
 
-public class AccountManeger implements Runnable{
-     private JTextArea display;
-     private String name;
-     private String surname;
-     private String password;
-     private String confirmPassword;
-     private boolean Run;
-     
-     
-     public AccountManeger(JTextArea in, String name, String surname, String password, String confirmPassword, boolean Run) throws IOException, InterruptedException{
-         this.display = in;
-         this.name = name;
-         this.surname = surname;
-         this.password = password;
-         this.confirmPassword = confirmPassword;
-         this.Run = Run;
+   
+    public static void newUser(String inputtedCodeName, String inputtedPassword, String ConfirmPassword, JTextArea Display) throws IOException{
+        FileWriter writer = new FileWriter("Data\\AccountManegerDATA\\Accounts.txt", true);
+        PrintWriter pw = new PrintWriter(writer);
         
-        
-        
-        
-}
-        private void printDisplayText(String File) {
-
-        TextRenderer renderer = new TextRenderer(display, 10, File);
-
-        Thread thread = new Thread(renderer);
-        
-        thread.start();
-        
-
-       
-    }
-
-    @Override
-    public void run() {
-        
-        
-        
-         try {
-            File accounts = new File("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt");
-            PrintWriter AccountWriter = new PrintWriter(accounts);
-            Scanner AccountsSC = new Scanner(accounts);
-            
-            if(!confirmPassword.equals(password)){
-                display.setBackground(Color.red);
-                printDisplayText("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Responses\\PasswordIncorect.txt");
-                Thread.sleep(10000);
-                display.setBackground(Color.white);
-                
-                
-                
+        if(!ConfirmPassword.equals(inputtedPassword)){
+            Display.setBackground(Color.red);
+            Display.setText("Your passwords do not match please try again");
         }
         
-            if(AccountsSC.next().equals(name) || AccountsSC.next().equals(surname) || AccountsSC.next().equals(password)){
-                display.setBackground(Color.red);
-                printDisplayText("Data\\AccountManegerDATA\\AccountTaken.txt");
-                
-                Thread.sleep(100);
-
-                
-                display.setBackground(Color.white);
-                display.setText("");
-                
-            }
-        
         else{
-               
-                AccountWriter.write(name + "#" + surname + "#" + password);
-                
-                
-                display.setBackground(Color.green);
-                printDisplayText("Data\\AccountManegerDATA\\AccountCreated.txt");
-                
-                AccountWriter.close();
+            String out = "\n" + inputtedCodeName + "#" + inputtedPassword;
+            pw.print(out);        
+            pw.close();
+
+
+            Display.setBackground(Color.green);
+            Display.setText("You have successfully created and account!");
+            
+        }
+        
+    
+    }
+        public static void LoginDetailsChecker(String inputtedUsername, String inputtedPassword, JTextArea Display) throws FileNotFoundException, InterruptedException{
+        
+        
+        Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\Accounts.txt"));
+        
+        while(fileSC.hasNextLine()){
+            Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
+            
+            String savedusernames = LineSC.next();
+            String savedpassword = LineSC.next();
+            
+            if(savedusernames.equals(inputtedUsername)){
+                if(savedpassword.equals(inputtedPassword)){
+                    Display.setText("You have logged on");
+                    Display.setBackground(Color.green);
+                    break;
+                    
+                }
                 
             }
-
-        
-        
-         
-
-        
-
-        
-    }    catch (InterruptedException ex) {
-             Logger.getLogger(AccountManeger.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (FileNotFoundException ex) {
-             Logger.getLogger(AccountManeger.class.getName()).log(Level.SEVERE, null, ex);
-         }
-
+            
+            else{
+                Display.setBackground(Color.red);
+                Display.setText("Your username or password is incorrect.");
+                
+                
+                
+            }
+            LineSC.close();
+                    
+                    
+        }
 }
-         
-    }
+}
 
-
-         
-
-
+      

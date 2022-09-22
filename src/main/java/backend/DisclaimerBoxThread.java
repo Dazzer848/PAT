@@ -4,6 +4,8 @@
  */
 package backend;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 
@@ -57,6 +59,51 @@ public class DisclaimerBoxThread implements Runnable{
         agree3.setVisible(false);
         agree4.setVisible(false);
         agree5.setVisible(false);
+        
+        try {
+            Thread.sleep(100);
+            NDA.setVisible(true);
+            boolean NDAt = NDA.isSelected();
+            Thread.sleep(1000);
+            LossOrHarm.setVisible(true);
+            boolean LossOrHarmT= LossOfLimbs.isSelected();
+            Thread.sleep(1000);
+            Death.setVisible(true);
+            boolean DeathT = Death.isSelected();
+            Thread.sleep(1000);
+            PainAndMuder.setVisible(true);
+            boolean PainAndMurderT = PainAndMuder.isSelected();
+            Thread.sleep(1000);
+            LossOfLimbs.setVisible(true);
+            boolean LossOfLimbsT = LossOfLimbs.isSelected();
+            Thread.sleep(1000);
+            Censorship.setVisible(true);
+            boolean CensorshipT = Censorship.isSelected();
+            Thread.sleep(1000);
+            ToHaveAGoodTime.setVisible(true);
+            boolean ToHaeAGoodTimeT = ToHaveAGoodTime.isSelected();
+            Thread.sleep(1000);
+            
+            if(NDAt == true && LossOfLimbsT == true && LossOrHarmT == true && DeathT == true && PainAndMurderT == true && CensorshipT == true && ToHaeAGoodTimeT == true){
+                agree1.setVisible(true);
+                Thread.sleep(100);
+                agree2.setVisible(true);
+                Thread.sleep(100);
+                agree3.setVisible(true);
+                Thread.sleep(100);
+                agree4.setVisible(true);
+                Thread.sleep(100);
+                agree5.setVisible(true);
+                
+            }
+            
+            
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(DisclaimerBoxThread.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         
         
         

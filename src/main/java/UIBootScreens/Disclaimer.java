@@ -8,6 +8,9 @@ import backend.TextRenderer;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import backend.DisclaimerBoxThread;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 /**
  *
@@ -21,17 +24,7 @@ public class Disclaimer extends javax.swing.JFrame {
     public Disclaimer() {
         initComponents();
         printDisplayText("Data\\NDA.txt");
-        LossOrHarm.setVisible(false);
-        Death.setVisible(false);
-        Painetc.setVisible(false);
-        LossOfLimbs.setVisible(false);
-        Censorship.setVisible(false);
-        ToHaveAGoodTime.setVisible(false);
-        Agree.setVisible(false);
-        jButton2.setVisible(false);
-        jButton3.setVisible(false);
-        jButton4.setVisible(false);
-        jButton5.setVisible(false);
+        DisclaimerCheckBoxThread();
     }
 
     /**
@@ -51,10 +44,10 @@ public class Disclaimer extends javax.swing.JFrame {
         Death = new javax.swing.JCheckBox();
         Painetc = new javax.swing.JCheckBox();
         Agree = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Agree2 = new javax.swing.JButton();
+        Agree3 = new javax.swing.JButton();
+        Agree4 = new javax.swing.JButton();
+        Agree5 = new javax.swing.JButton();
         LossOfLimbs = new javax.swing.JCheckBox();
         Censorship = new javax.swing.JCheckBox();
         ToHaveAGoodTime = new javax.swing.JCheckBox();
@@ -90,13 +83,13 @@ public class Disclaimer extends javax.swing.JFrame {
 
         Agree.setText("AGREE");
 
-        jButton2.setText("AGREE");
+        Agree2.setText("AGREE");
 
-        jButton3.setText("AGREE");
+        Agree3.setText("AGREE");
 
-        jButton4.setText("AGREE");
+        Agree4.setText("AGREE");
 
-        jButton5.setText("AGREE");
+        Agree5.setText("AGREE");
 
         LossOfLimbs.setText("Loss of Limbs");
         LossOfLimbs.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +109,8 @@ public class Disclaimer extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Agree4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Agree5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NDA)
@@ -125,8 +118,8 @@ public class Disclaimer extends javax.swing.JFrame {
                             .addComponent(Death)
                             .addComponent(Painetc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Agree2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Agree3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -153,13 +146,13 @@ public class Disclaimer extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(Agree)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(Agree2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(Agree3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(Agree4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(Agree5)
                 .addGap(27, 27, 27))
         );
 
@@ -196,12 +189,7 @@ public class Disclaimer extends javax.swing.JFrame {
     }//GEN-LAST:event_NDAStateChanged
 
     private void NDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NDAMouseClicked
-        try {
-            TimeUnit.SECONDS.sleep(3);
-            LossOrHarm.setVisible(true);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Disclaimer.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         
     }//GEN-LAST:event_NDAMouseClicked
 
@@ -218,6 +206,14 @@ public class Disclaimer extends javax.swing.JFrame {
         
 
        
+    }
+        
+    private void DisclaimerCheckBoxThread(){
+        DisclaimerBoxThread DisclaimerBoxs = new DisclaimerBoxThread(NDA, LossOrHarm, Death, Painetc, LossOfLimbs, Censorship, ToHaveAGoodTime, Agree,Agree,Agree2,Agree4,Agree5);
+        
+        Thread DisclaimerBoxThread = new Thread(DisclaimerBoxs);
+        
+        DisclaimerBoxThread.start();
     }
     /**
      * @param args the command line arguments
@@ -256,6 +252,10 @@ public class Disclaimer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agree;
+    private javax.swing.JButton Agree2;
+    private javax.swing.JButton Agree3;
+    private javax.swing.JButton Agree4;
+    private javax.swing.JButton Agree5;
     private javax.swing.JCheckBox Censorship;
     private javax.swing.JCheckBox Death;
     private javax.swing.JTextArea DisplayTextArea;
@@ -264,10 +264,6 @@ public class Disclaimer extends javax.swing.JFrame {
     private javax.swing.JCheckBox NDA;
     private javax.swing.JCheckBox Painetc;
     private javax.swing.JCheckBox ToHaveAGoodTime;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

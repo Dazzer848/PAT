@@ -56,52 +56,39 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="NameLabel" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="NameTextField" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="SurnameLabel" min="-2" pref="65" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="SurnameTextField" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="ContinueButton" min="-2" pref="95" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="PasswordLabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ConfirmPasswordLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="PasswordTextField" max="32767" attributes="0"/>
-                                      <Component id="ConfirmTextField" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane1" min="-2" pref="448" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel6" min="-2" pref="387" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="ContinueButton" min="-2" pref="95" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel6" min="-2" pref="387" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="PasswordLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="ConfirmPasswordLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="NameLabel" min="-2" pref="74" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="CodeName" alignment="1" max="32767" attributes="0"/>
+                              <Component id="PasswordTextField" max="32767" attributes="0"/>
+                              <Component id="ConfirmTextField" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="448" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -126,20 +113,10 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" pref="86" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CodeName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="SurnameLabel" min="-2" pref="19" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="SurnameTextField" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -214,16 +191,11 @@
             <Property name="text" type="java.lang.String" value="Create Account"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NameTextField">
-        </Component>
-        <Component class="javax.swing.JLabel" name="SurnameLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Surname:"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="CodeName">
         </Component>
         <Component class="javax.swing.JLabel" name="NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Name:"/>
+            <Property name="text" type="java.lang.String" value="Code Name:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="PasswordTextField">
@@ -235,8 +207,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Password:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SurnameTextField">
         </Component>
         <Component class="javax.swing.JLabel" name="ConfirmPasswordLabel">
           <Properties>

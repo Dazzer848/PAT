@@ -66,8 +66,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton4" max="32767" attributes="0"/>
-                      <Component id="jButton5" max="32767" attributes="0"/>
+                      <Component id="Agree4" max="32767" attributes="0"/>
+                      <Component id="Agree5" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="NDA" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -75,8 +75,8 @@
                               <Component id="Death" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Painetc" alignment="0" max="32767" attributes="0"/>
                               <Component id="Agree" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton2" max="32767" attributes="0"/>
-                              <Component id="jButton3" max="32767" attributes="0"/>
+                              <Component id="Agree2" max="32767" attributes="0"/>
+                              <Component id="Agree3" max="32767" attributes="0"/>
                               <Component id="LossOfLimbs" max="32767" attributes="0"/>
                               <Component id="Censorship" max="32767" attributes="0"/>
                               <Component id="ToHaveAGoodTime" max="32767" attributes="0"/>
@@ -108,13 +108,13 @@
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="Agree" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Agree2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Agree3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="Agree4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="Agree5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -151,22 +151,22 @@
             <Property name="text" type="java.lang.String" value="AGREE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="Agree2">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="Agree3">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="Agree4">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="Agree5">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREE"/>
           </Properties>
