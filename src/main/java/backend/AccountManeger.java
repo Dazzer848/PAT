@@ -27,32 +27,39 @@ import java.util.logging.Logger;
 public class AccountManeger {
 
    
-    public static void newUser(String inputtedCodeName, String inputtedPassword, String ConfirmPassword, JTextArea Display) throws IOException{
-        FileWriter writer = new FileWriter("Data\\AccountManegerDATA\\Accounts.txt", true);
+    public static void newUser(String inputtedCodeName, String inputtedPassword, String ConfirmPassword, JTextArea Display) throws IOException, FileNotFoundException, InterruptedException{
+        
+        boolean LoginDetailsOKAY = LoginDetailsChecker(inputtedCodeName, inputtedPassword, Display, true);
+        Scanner fileSC = new Scanner(new File("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt"));
+        
+        FileWriter writer = new FileWriter("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt", true);
         PrintWriter pw = new PrintWriter(writer);
         
-        if(!ConfirmPassword.equals(inputtedPassword)){
-            Display.setBackground(Color.red);
-            Display.setText("Your passwords do not match please try again");
+        
+        if(LoginDetailsOKAY == true){
+            if(!ConfirmPassword.equals(inputtedPassword)){
+                Display.setBackground(Color.red);
+                Display.setText("Your passwords do not match please try again");
         }
+        
+        
         
         else{
             String out = "\n" + inputtedCodeName + "#" + inputtedPassword;
             pw.print(out);        
             pw.close();
 
-
             Display.setBackground(Color.green);
             Display.setText("You have successfully created and account!");
             
         }
-        
-    
+            
     }
-        public static void LoginDetailsChecker(String inputtedUsername, String inputtedPassword, JTextArea Display) throws FileNotFoundException, InterruptedException{
+}
+        public static boolean LoginDetailsChecker(String inputtedUsername, String inputtedPassword, JTextArea Display, boolean LoginDetailsOKAY) throws FileNotFoundException, InterruptedException{
+        LoginDetailsOKAY = true;
         
-        
-        Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\Accounts.txt"));
+        Scanner fileSC = new Scanner(new File("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt"));
         
         while(fileSC.hasNextLine()){
             Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
@@ -61,27 +68,20 @@ public class AccountManeger {
             String savedpassword = LineSC.next();
             
             if(savedusernames.equals(inputtedUsername)){
-                if(savedpassword.equals(inputtedPassword)){
-                    Display.setText("You have logged on");
-                    Display.setBackground(Color.green);
-                    break;
-                    
-                }
-                
+                Display.setBackground(Color.red);
+                Display.setText("That username is already taken");
+                LineSC.close();
+                return LoginDetailsOKAY;
             }
             
-            else{
-                Display.setBackground(Color.red);
-                Display.setText("Your username or password is incorrect.");
-                
-                
-                
-            }
             LineSC.close();
                     
-                    
         }
-}
-}
+        
+        return LoginDetailsOKAY;
+    }
+        
+}    
+
 
       

@@ -10,11 +10,11 @@ They will teach you all you need to know and the tools required for the job.
 Goodluck!
 
 Trainer Patching in.....
-________________________________________________________________________________________________
+____________________________________________________
 
 ------------------------------------- Trainer Patched In ---------------------------------------
 
 Trainer: Welcome, I am your trainer, before we begin i would just like to explain some rules
 
-Instruction: Press Terms and Conditions tab to view documents.
+Instruction: Press View Documents to agree to some ground rules before we start.
 

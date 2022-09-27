@@ -21,15 +21,17 @@ import java.io.FileNotFoundException;
  */
 
 
-public class Puzzle1 extends javax.swing.JFrame {
+public class Puzzle3 extends javax.swing.JFrame {
 
     /**
      * Creates new form BootUp
      */
-    public Puzzle1() {
+    public Puzzle3() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText("Data//BootUpText.txt");
+        
+        // DOESNT work without direct file path. I AM NOT GOING INSANE IT DOESTN WORK. 
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle2.txt");
         
     }
 
@@ -43,19 +45,19 @@ public class Puzzle1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        TextDisplay = new javax.swing.JTextArea();
+        DisplayTextArea = new javax.swing.JTextArea();
         AnswerTextField = new javax.swing.JTextField();
         AnswerCheckButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        TextDisplay.setEditable(false);
-        TextDisplay.setBackground(new java.awt.Color(0, 0, 0));
-        TextDisplay.setColumns(20);
-        TextDisplay.setForeground(new java.awt.Color(0, 153, 0));
-        TextDisplay.setRows(5);
-        jScrollPane1.setViewportView(TextDisplay);
+        DisplayTextArea.setEditable(false);
+        DisplayTextArea.setBackground(new java.awt.Color(0, 0, 0));
+        DisplayTextArea.setColumns(20);
+        DisplayTextArea.setForeground(new java.awt.Color(0, 153, 0));
+        DisplayTextArea.setRows(5);
+        jScrollPane1.setViewportView(DisplayTextArea);
 
         AnswerTextField.setBackground(new java.awt.Color(0, 0, 0));
         AnswerTextField.setForeground(new java.awt.Color(51, 102, 0));
@@ -106,14 +108,13 @@ public class Puzzle1 extends javax.swing.JFrame {
 
           
         try {
-           boolean result = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 1);
-            
-            if(result == true){
-                new LogIn().setVisible(true);
-                dispose();
-            }
+             boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 3);
+             
+             if (cuurentStatus == true){
+                 dispose();
+             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Puzzle1.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Puzzle3.class.getName()).log(Level.SEVERE, null, ex);
         }
           
 
@@ -126,7 +127,7 @@ public class Puzzle1 extends javax.swing.JFrame {
     }//GEN-LAST:event_AnswerCheckButtonActionPerformed
         private void printDisplayText(String File) {
 
-        TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);
+        TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
 
         Thread thread = new Thread(renderer);
         
@@ -153,21 +154,35 @@ public class Puzzle1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Puzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Puzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Puzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Puzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Puzzle1().setVisible(true);
+                new Puzzle3().setVisible(true);
             }
         });
     }
@@ -175,7 +190,7 @@ public class Puzzle1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AnswerCheckButton;
     private javax.swing.JTextField AnswerTextField;
-    private javax.swing.JTextArea TextDisplay;
+    private javax.swing.JTextArea DisplayTextArea;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

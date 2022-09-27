@@ -16,6 +16,8 @@ import javax.swing.JCheckBox;
  *
  * @author darrenl
  */
+
+// WHEN ALL BOXES CHECKEd OPEN UP LOGIN
 public class Disclaimer extends javax.swing.JFrame {
 
     /**

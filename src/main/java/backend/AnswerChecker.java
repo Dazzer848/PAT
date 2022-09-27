@@ -18,32 +18,36 @@ import javax.swing.JTextField;
  *
  * @author darrenl
  */
-// Need help to get it to work doesnt write to file!
 public class AnswerChecker {
-    public static boolean checkAnswer(String Inpuutedanswer, boolean cap,int level) throws FileNotFoundException{
+    public static boolean checkAnswer(String Inpuutedanswer, boolean cap,int level)throws FileNotFoundException{
         boolean result = false;
         boolean capResult = false;
         boolean nocapResult = false;
 
         String answer = "";
 
-        Scanner scan = new Scanner(new File("Data\\Answers.txt"));
+        Scanner scan = new Scanner(new File("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Answers.txt"));
         PrintWriter writer = new PrintWriter(new File("Data\\LevelSaved.txt"));
 
+        
+      
         for(int i = 0; i < level;i++){
             if(scan.hasNextLine()){
                 answer = scan.nextLine();
             }
         }
+        
         if(cap && answer.equalsIgnoreCase(Inpuutedanswer)){
             writer.print(level);
             writer.flush();
-            return true;
+            result  = true;
+            return result;
         }
         else if(answer.equals(Inpuutedanswer)){
             writer.print(level);
             writer.flush();
-            return true;
+            result = true;
+            return result;
         }
 
         return result;

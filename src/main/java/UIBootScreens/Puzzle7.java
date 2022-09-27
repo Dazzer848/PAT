@@ -21,15 +21,17 @@ import java.io.FileNotFoundException;
  */
 
 
-public class BootUp extends javax.swing.JFrame {
+public class Puzzle7 extends javax.swing.JFrame {
 
     /**
      * Creates new form BootUp
      */
-    public BootUp() {
+    public Puzzle7() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText("Data//BootUpText.txt");
+        
+        // DOESNT work without direct file path. I AM NOT GOING INSANE IT DOESTN WORK. 
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle6.txt");
         
     }
 
@@ -43,19 +45,19 @@ public class BootUp extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        TextDisplay = new javax.swing.JTextArea();
+        DisplayTextArea = new javax.swing.JTextArea();
         AnswerTextField = new javax.swing.JTextField();
         AnswerCheckButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        TextDisplay.setEditable(false);
-        TextDisplay.setBackground(new java.awt.Color(0, 0, 0));
-        TextDisplay.setColumns(20);
-        TextDisplay.setForeground(new java.awt.Color(0, 153, 0));
-        TextDisplay.setRows(5);
-        jScrollPane1.setViewportView(TextDisplay);
+        DisplayTextArea.setEditable(false);
+        DisplayTextArea.setBackground(new java.awt.Color(0, 0, 0));
+        DisplayTextArea.setColumns(20);
+        DisplayTextArea.setForeground(new java.awt.Color(0, 153, 0));
+        DisplayTextArea.setRows(5);
+        jScrollPane1.setViewportView(DisplayTextArea);
 
         AnswerTextField.setBackground(new java.awt.Color(0, 0, 0));
         AnswerTextField.setForeground(new java.awt.Color(51, 102, 0));
@@ -104,19 +106,16 @@ public class BootUp extends javax.swing.JFrame {
 
     private void AnswerCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerCheckButtonActionPerformed
 
-          boolean currentStatus = false;
           
         try {
-            AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 1);
+             boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 7);
+             
+             if (cuurentStatus == true){
+                 dispose();
+             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(BootUp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Puzzle7.class.getName()).log(Level.SEVERE, null, ex);
         }
-          if(currentStatus = true){
-              dispose();
-              
-              
-              
-          }
           
 
   
@@ -128,7 +127,7 @@ public class BootUp extends javax.swing.JFrame {
     }//GEN-LAST:event_AnswerCheckButtonActionPerformed
         private void printDisplayText(String File) {
 
-        TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);
+        TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
 
         Thread thread = new Thread(renderer);
         
@@ -155,20 +154,35 @@ public class BootUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BootUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Puzzle7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BootUp().setVisible(true);
+                new Puzzle7().setVisible(true);
             }
         });
     }
@@ -176,7 +190,7 @@ public class BootUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AnswerCheckButton;
     private javax.swing.JTextField AnswerTextField;
-    private javax.swing.JTextArea TextDisplay;
+    private javax.swing.JTextArea DisplayTextArea;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

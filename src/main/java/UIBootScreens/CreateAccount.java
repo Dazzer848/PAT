@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextArea;
 import backend.AccountManeger;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -180,7 +181,13 @@ public class CreateAccount extends javax.swing.JFrame {
     private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
         try {
             AccountManeger.newUser(CodeName.getText(), PasswordTextField.getText(), ConfirmTextField.getText(), DisplayTextArea);
+            
+            // WHEN CORRECT AND ACCOUNT IS MADE 
+            // new BootScreen().setVisible(true);
+            
         } catch (IOException ex) {
+            Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
         

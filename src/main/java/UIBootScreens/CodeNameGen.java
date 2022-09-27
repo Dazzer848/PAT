@@ -196,6 +196,7 @@ public class CodeNameGen extends javax.swing.JFrame {
                 DisplayTextArea.setText(CodeName);
                 GenerateButton.setVisible(false);
                 
+                
             }
             
             
