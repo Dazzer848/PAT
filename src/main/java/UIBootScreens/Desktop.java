@@ -28,12 +28,10 @@ public class Desktop extends javax.swing.JFrame {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
-        GmailLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         GoogleLabel = new javax.swing.JLabel();
         GoogleChromeButton = new javax.swing.JButton();
-        GmailButton = new javax.swing.JButton();
         PuzzleButton = new javax.swing.JButton();
         TrainingProgramButton = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -45,24 +43,12 @@ public class Desktop extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 0, 102));
         kGradientPanel1.setName("o"); // NOI18N
 
-        GmailLabel.setText("gmail");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT\\Images\\Seal_of_the_Federal_Bureau_of_Investigation.svg.png")); // NOI18N
-
         jLabel5.setText("wow");
 
         GoogleLabel.setForeground(new java.awt.Color(255, 255, 255));
         GoogleLabel.setText("Google Chrome");
 
-        GoogleChromeButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT\\Images\\Google Chrome LOGO.png")); // NOI18N
-
-        GmailButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT\\Images\\Gmail-logo.png")); // NOI18N
-
-        PuzzleButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT\\Images\\Puzzle_Logo-removebg-preview.png")); // NOI18N
-
         TrainingProgramButton.setText("Training");
-
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT\\Images\\NotesLogo.png")); // NOI18N
 
         jLabel2.setText("Notes");
 
@@ -72,19 +58,12 @@ public class Desktop extends javax.swing.JFrame {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(GoogleLabel))
-                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                            .addGap(15, 15, 15)
-                            .addComponent(GoogleChromeButton))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(GmailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(GmailLabel)))
+                        .addContainerGap()
+                        .addComponent(GoogleLabel))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(GoogleChromeButton)))
                 .addGap(3, 3, 3)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -124,15 +103,8 @@ public class Desktop extends javax.swing.JFrame {
                                 .addComponent(GoogleChromeButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(GoogleLabel)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                        .addGap(23, 23, 23)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(GmailButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(GmailLabel))))
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -199,8 +171,6 @@ public class Desktop extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton GmailButton;
-    private javax.swing.JLabel GmailLabel;
     private javax.swing.JButton GoogleChromeButton;
     private javax.swing.JLabel GoogleLabel;
     private javax.swing.JButton PuzzleButton;

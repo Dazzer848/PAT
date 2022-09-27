@@ -26,7 +26,7 @@ public class AnswerChecker {
 
         String answer = "";
 
-        Scanner scan = new Scanner(new File("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Answers.txt"));
+        Scanner scan = new Scanner(new File("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Answers\\Answers.txt"));
         PrintWriter writer = new PrintWriter(new File("Data\\LevelSaved.txt"));
 
         

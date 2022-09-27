@@ -10,14 +10,14 @@ import backend.TextRenderer;
  *
  * @author User
  */
-public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
+public class SuccessForPuzzle1 extends javax.swing.JFrame {
 
     /**
      * Creates new form SuccessForBootUpPuzzle
      */
-    public SuccessForBootUpPuzzle() {
+    public SuccessForPuzzle1() {
         initComponents();
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\IntroductionText.txt");
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Responses\\IntroductionText.txt");
     }
 
     /**
@@ -31,8 +31,8 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         TextDisplay = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DisclaimerYESbutton = new javax.swing.JButton();
+        LeaveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,14 +41,19 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
         TextDisplay.setForeground(new java.awt.Color(0, 0, 0));
         TextDisplay.setRows(5);
 
-        jButton1.setText("To the DISCLAIMER");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        DisclaimerYESbutton.setText("To the DISCLAIMER");
+        DisclaimerYESbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                DisclaimerYESbuttonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Nevermind i want out of this hell hole");
+        LeaveButton.setText("Nevermind i want out of this hell hole");
+        LeaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeaveButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,11 +64,11 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(223, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(LeaveButton)
                 .addGap(220, 220, 220))
             .addGroup(layout.createSequentialGroup()
                 .addGap(267, 267, 267)
-                .addComponent(jButton1)
+                .addComponent(DisclaimerYESbutton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TextDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
@@ -73,9 +78,9 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(DisclaimerYESbutton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(LeaveButton)
                 .addGap(18, 18, 18))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(TextDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
@@ -84,10 +89,15 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void DisclaimerYESbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisclaimerYESbuttonActionPerformed
         new Disclaimer().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_DisclaimerYESbuttonActionPerformed
+
+    private void LeaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveButtonActionPerformed
+        dispose();
+        // MAYBE add in spooky video or somethinhg.
+    }//GEN-LAST:event_LeaveButtonActionPerformed
         private void printDisplayText(String File) {
 
         TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);
@@ -116,28 +126,29 @@ public class SuccessForBootUpPuzzle extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SuccessForBootUpPuzzle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuccessForPuzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SuccessForBootUpPuzzle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuccessForPuzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SuccessForBootUpPuzzle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuccessForPuzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SuccessForBootUpPuzzle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuccessForPuzzle1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SuccessForBootUpPuzzle().setVisible(true);
+                new SuccessForPuzzle1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DisclaimerYESbutton;
+    private javax.swing.JButton LeaveButton;
     private javax.swing.JTextArea TextDisplay;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

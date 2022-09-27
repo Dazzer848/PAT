@@ -25,7 +25,7 @@ public class Disclaimer extends javax.swing.JFrame {
      */
     public Disclaimer() {
         initComponents();
-        printDisplayText("Data\\NDA.txt");
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Responses\\NDA.txt");
         DisclaimerCheckBoxThread();
     }
 
@@ -46,10 +46,6 @@ public class Disclaimer extends javax.swing.JFrame {
         Death = new javax.swing.JCheckBox();
         Painetc = new javax.swing.JCheckBox();
         Agree = new javax.swing.JButton();
-        Agree2 = new javax.swing.JButton();
-        Agree3 = new javax.swing.JButton();
-        Agree4 = new javax.swing.JButton();
-        Agree5 = new javax.swing.JButton();
         LossOfLimbs = new javax.swing.JCheckBox();
         Censorship = new javax.swing.JCheckBox();
         ToHaveAGoodTime = new javax.swing.JCheckBox();
@@ -84,14 +80,11 @@ public class Disclaimer extends javax.swing.JFrame {
         Painetc.setText("Pain and Possible Murder");
 
         Agree.setText("AGREE");
-
-        Agree2.setText("AGREE");
-
-        Agree3.setText("AGREE");
-
-        Agree4.setText("AGREE");
-
-        Agree5.setText("AGREE");
+        Agree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgreeActionPerformed(evt);
+            }
+        });
 
         LossOfLimbs.setText("Loss of Limbs");
         LossOfLimbs.addActionListener(new java.awt.event.ActionListener() {
@@ -110,23 +103,16 @@ public class Disclaimer extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Agree4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Agree5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NDA)
-                            .addComponent(LossOrHarm)
-                            .addComponent(Death)
-                            .addComponent(Painetc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Agree2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Agree3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NDA)
+                    .addComponent(LossOrHarm)
+                    .addComponent(Death)
+                    .addComponent(Painetc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,17 +131,9 @@ public class Disclaimer extends javax.swing.JFrame {
                 .addComponent(Censorship)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(ToHaveAGoodTime)
-                .addGap(43, 43, 43)
+                .addGap(108, 108, 108)
                 .addComponent(Agree)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Agree2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Agree3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Agree4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Agree5)
-                .addGap(27, 27, 27))
+                .addGap(78, 78, 78))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,6 +176,14 @@ public class Disclaimer extends javax.swing.JFrame {
     private void NDAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_NDAItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_NDAItemStateChanged
+
+    private void AgreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgreeActionPerformed
+        
+        // NEED TO CHECK IF ALL BOXES ARE CHECKED1!!!
+        //if(NDAStateChanged(evt))
+        dispose();
+        new LogIn().setVisible(true);
+    }//GEN-LAST:event_AgreeActionPerformed
         private void printDisplayText(String File) {
 
         TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
@@ -211,7 +197,7 @@ public class Disclaimer extends javax.swing.JFrame {
     }
         
     private void DisclaimerCheckBoxThread(){
-        DisclaimerBoxThread DisclaimerBoxs = new DisclaimerBoxThread(NDA, LossOrHarm, Death, Painetc, LossOfLimbs, Censorship, ToHaveAGoodTime, Agree,Agree,Agree2,Agree4,Agree5);
+        DisclaimerBoxThread DisclaimerBoxs = new DisclaimerBoxThread(NDA, LossOrHarm, Death, Painetc, LossOfLimbs, Censorship, ToHaveAGoodTime);
         
         Thread DisclaimerBoxThread = new Thread(DisclaimerBoxs);
         
@@ -254,10 +240,6 @@ public class Disclaimer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agree;
-    private javax.swing.JButton Agree2;
-    private javax.swing.JButton Agree3;
-    private javax.swing.JButton Agree4;
-    private javax.swing.JButton Agree5;
     private javax.swing.JCheckBox Censorship;
     private javax.swing.JCheckBox Death;
     private javax.swing.JTextArea DisplayTextArea;

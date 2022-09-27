@@ -29,7 +29,7 @@ public class Puzzle1 extends javax.swing.JFrame {
     public Puzzle1() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText("Data//BootUpText.txt");
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle1.txt");
         
     }
 
@@ -109,7 +109,7 @@ public class Puzzle1 extends javax.swing.JFrame {
            boolean result = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 1);
             
             if(result == true){
-                new LogIn().setVisible(true);
+                new SuccessForPuzzle1().setVisible(true);
                 dispose();
             }
         } catch (FileNotFoundException ex) {
