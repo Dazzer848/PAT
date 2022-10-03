@@ -4,6 +4,13 @@
  */
 package UIBootScreens;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import backend.AccountManeger;
+
 /**
  *
  * @author user-pc
@@ -48,7 +55,25 @@ public class Desktop extends javax.swing.JFrame {
         GoogleLabel.setForeground(new java.awt.Color(255, 255, 255));
         GoogleLabel.setText("Google Chrome");
 
+        GoogleChromeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoogleChromeButtonActionPerformed(evt);
+            }
+        });
+
+        PuzzleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PuzzleButtonActionPerformed(evt);
+            }
+        });
+
         TrainingProgramButton.setText("Training");
+
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Notes");
 
@@ -134,6 +159,35 @@ public class Desktop extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            new Notes().setVisible(true);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void GoogleChromeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoogleChromeButtonActionPerformed
+        
+        // NB THE CHROME DOESNT WORK!
+        try {
+            java.awt.Desktop.getDesktop().open(new File("Google\\Chrome\\Application\\chrome.exe"));
+        } catch (IOException ex) {
+            Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_GoogleChromeButtonActionPerformed
+
+    private void PuzzleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PuzzleButtonActionPerformed
+        
+        
+        
+        try {
+            AccountManeger.LevelLoader();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PuzzleButtonActionPerformed
 
     /**
      * @param args the command line arguments

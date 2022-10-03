@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package UIBootScreens;
+import backend.TextRenderer;
 
 /**
  *
@@ -26,14 +27,25 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jLabel1 = new javax.swing.JLabel();
         NewPlayer = new javax.swing.JButton();
         Contimue = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("WELCOME TO PROJECT SCS");
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 0, 0));
+        kGradientPanel1.setkStartColor(new java.awt.Color(51, 51, 51));
 
         NewPlayer.setText("NEW PLAYER");
         NewPlayer.addActionListener(new java.awt.event.ActionListener() {
@@ -49,32 +61,34 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Welcome To Project SCS");
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NewPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Contimue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addGap(217, 217, 217)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Contimue, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(150, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(130, 130, 130))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(75, 75, 75)
                 .addComponent(NewPlayer)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addComponent(Contimue)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,16 +105,17 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NewPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewPlayerActionPerformed
-        new CreateAccount().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_NewPlayerActionPerformed
-
     private void ContimueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContimueActionPerformed
         new BootScreenWithAccount().setVisible(true);
         dispose();
     }//GEN-LAST:event_ContimueActionPerformed
 
+    private void NewPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewPlayerActionPerformed
+        new CreateAccount().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_NewPlayerActionPerformed
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -140,6 +155,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Contimue;
     private javax.swing.JButton NewPlayer;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

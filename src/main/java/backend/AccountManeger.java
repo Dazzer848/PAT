@@ -4,6 +4,13 @@
  */
 package backend;
 
+import UIBootScreens.Puzzle1;
+import UIBootScreens.Puzzle2;
+import UIBootScreens.Puzzle3;
+import UIBootScreens.Puzzle4;
+import UIBootScreens.Puzzle5;
+import UIBootScreens.Puzzle6;
+import UIBootScreens.Puzzle7;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,16 +30,19 @@ import java.util.logging.Logger;
  *
  * @author user-pc
  */
-// CANT FIGURE OUT HOW TO CALL IT IN THE OTHER PROGRAM
+
 public class AccountManeger {
 
    
-    public static void newUser(String inputtedCodeName, String inputtedPassword, String ConfirmPassword, JTextArea Display) throws IOException, FileNotFoundException, InterruptedException{
+    public static boolean newUser(String inputtedCodeName, String inputtedPassword, String ConfirmPassword, JTextArea Display) throws IOException, FileNotFoundException, InterruptedException{
         
-        boolean LoginDetailsOKAY = LoginDetailsChecker(inputtedCodeName, inputtedPassword, Display, true);
-        Scanner fileSC = new Scanner(new File("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt"));
+        boolean AccountCreated = false;
+        boolean LoginDetailsOKAY = AccountTaken(inputtedCodeName, inputtedPassword, Display, true);
         
-        FileWriter writer = new FileWriter("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt", true);
+        Scanner fileSC = new Scanner(new File("Data//AccountManegerDATA//Accounts.txt"));
+        
+
+        FileWriter writer = new FileWriter("Data//AccountManegerDATA//Accounts.txt", true);
         PrintWriter pw = new PrintWriter(writer);
         
         
@@ -40,48 +50,193 @@ public class AccountManeger {
             if(!ConfirmPassword.equals(inputtedPassword)){
                 Display.setBackground(Color.red);
                 Display.setText("Your passwords do not match please try again");
+                return AccountCreated;
         }
         
         
         
         else{
-            String out = "\n" + inputtedCodeName + "#" + inputtedPassword;
+            String out = inputtedCodeName + "#" + inputtedPassword + "#" + "\n";
             pw.print(out);        
             pw.close();
 
             Display.setBackground(Color.green);
             Display.setText("You have successfully created and account!");
+            AccountCreated = true;
+            return AccountCreated;
             
         }
             
     }
+        return AccountCreated;
 }
-        public static boolean LoginDetailsChecker(String inputtedUsername, String inputtedPassword, JTextArea Display, boolean LoginDetailsOKAY) throws FileNotFoundException, InterruptedException{
-        LoginDetailsOKAY = true;
+    
+    
+    
+        public static boolean AccountTaken(String inputtedUsername, String inputtedPassword, JTextArea Display, boolean LoginDetailsOKAY) throws FileNotFoundException, InterruptedException{
+        LoginDetailsOKAY = false;
         
-        Scanner fileSC = new Scanner(new File("NetBeansProjects\\PAT\\Data\\AccountManegerDATA\\Accounts.txt"));
+        Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\Accounts.txt"));
         
         while(fileSC.hasNextLine()){
             Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
             
             String savedusernames = LineSC.next();
-            String savedpassword = LineSC.next();
+            
+            int i = 1;
+            System.out.println("" + i);
+            i += 1;
+            
+            System.out.println(savedusernames);
+            
             
             if(savedusernames.equals(inputtedUsername)){
                 Display.setBackground(Color.red);
-                Display.setText("That username is already taken");
-                LineSC.close();
-                return LoginDetailsOKAY;
+                Display.setText("The username is already taken");
+ 
             }
             
-            LineSC.close();
-                    
-        }
-        
-        return LoginDetailsOKAY;
+            else{
+                LoginDetailsOKAY = true;
+                return LoginDetailsOKAY;
+            }
     }
         
-}    
+     return LoginDetailsOKAY;   
+        
+        
+}
+        
+        public static void MakeCurrentUser(String currentUser) throws FileNotFoundException{
+            PrintWriter pw = new PrintWriter(new File("Data//AccountManegerDATA//CurrentUser.txt"));
+            
+            pw.print(currentUser);
+            
+            pw.close();
+            
+        }
+        
+        public static String GetCurrentUser() throws FileNotFoundException{
+            Scanner currentUserSC = new Scanner(new File("Data\\AccountManegerDATA\\CurrentUser.txt"));
+            
+            String currentUser = currentUserSC.next();
+          
+            return currentUser;
+        }
+        
+        
+        public static boolean LogIn(String inputtedCodeName, String InputtedPassword, JTextArea Display) throws FileNotFoundException{
+            boolean LogIn = false;
+            
+            Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\Accounts.txt"));
+            
+        
+        while(fileSC.hasNextLine()){
+            Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
+            
+            String savedusernames = LineSC.next();
+            String savedPasswords = LineSC.next();
+            
+            if(!inputtedCodeName.equals(savedusernames)){
+                Display.setBackground(Color.red);
+                Display.setText("Your username is incorrect!");
+            }
+            
+            else if(!InputtedPassword.equals(savedPasswords)){
+                Display.setBackground(Color.red);
+                Display.setText("Your Password is incorrect!");
+            }
+            
+            else if(!InputtedPassword.equals(savedPasswords) && !inputtedCodeName.equals(savedusernames)){
+                Display.setBackground(Color.red);
+                Display.setText("Both your password and username is incorrect");
+            }
+            
+            
+            
+            else{
+                LogIn = true;
+            }
+            
 
+            
+            
+        }
+    return LogIn;    
+}
+        
+        
+        public static void LevelSaver(String currentLevel) throws FileNotFoundException, IOException{
+            
+            Scanner CurrentUserSC = new Scanner(new File("Data\\AccountManegerDATA\\CurrentUser.txt"));
+            FileWriter writer = new FileWriter("Data//AccountManegerDATA//AccountsWithLevels.txt", true);
+            PrintWriter pw = new PrintWriter(writer);
+            
+            String currentUser = CurrentUserSC.next();
+            System.out.println(currentUser);
+            
+            String out = currentUser + "#" + currentLevel + "#\n";
+            pw.print(out);
+            pw.close();
+        }
+        
+        
+        
+        public static void LevelLoader() throws FileNotFoundException{
+            Scanner currentUserSC = new Scanner(new File("Data\\AccountManegerDATA\\CurrentUser.txt"));
+            Scanner FileSCAccountWithLevels = new Scanner(new File("Data\\AccountManegerDATA\\AccountsWithLevels.txt"));
+            
+            String currentuser = currentUserSC.next();
+            
+            int savedlevel;
+            while(FileSCAccountWithLevels.hasNext()){
+                Scanner LineSCAccountWithLevels =  new Scanner(FileSCAccountWithLevels.nextLine()).useDelimiter("#");
+            
+                String savedusername = LineSCAccountWithLevels.next();
+                savedlevel = Integer.parseInt(LineSCAccountWithLevels.next());
+                
+                if(currentuser.equals(savedusername)){
+                    switch(savedlevel){
+                        
+                        case 2:
+                            new Puzzle2().setVisible(true);
+                        break;
+                            
+                        case 3:
+                            new Puzzle3().setVisible(true);
+                        break;
+                        
+                        case 4:
+                            new Puzzle4().setVisible(true);
+                        break;
+                        
+                        case 5:
+                            new Puzzle5().setVisible(true);
+                        break;
+                        
+                        case 6:
+                            new Puzzle6().setVisible(true);
+                        break;
+                        
+                        case 7:
+                            new Puzzle7().setVisible(true);
+                        break;
+                        
+                        default:
+                            System.out.println("An Unexpected Error occured please contact Support");
+                       
+                    }
+                    break;
+                }
+            
+                
+            }
+            
+            
+            
+            
+        }
 
-      
+ 
+}
+

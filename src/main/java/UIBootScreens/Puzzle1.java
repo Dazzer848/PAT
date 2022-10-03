@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import backend.AnswerChecker;
 import java.io.FileNotFoundException;
+import backend.AccountManeger;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Puzzle1 extends javax.swing.JFrame {
     public Puzzle1() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle1.txt");
+        printDisplayText("Data\\Puzzles\\Puzzle1.txt");
         
     }
 
@@ -109,10 +110,13 @@ public class Puzzle1 extends javax.swing.JFrame {
            boolean result = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 1);
             
             if(result == true){
+                AccountManeger.LevelSaver("2");
                 new SuccessForPuzzle1().setVisible(true);
                 dispose();
             }
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(Puzzle1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(Puzzle1.class.getName()).log(Level.SEVERE, null, ex);
         }
           

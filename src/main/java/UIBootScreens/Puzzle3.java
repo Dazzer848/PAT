@@ -31,7 +31,7 @@ public class Puzzle3 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         // DOESNT work without direct file path. I AM NOT GOING INSANE IT DOESTN WORK. 
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle2.txt");
+        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle3.txt");
         
     }
 
