@@ -13,6 +13,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import backend.AnswerChecker;
+import backend.AccountManeger;
 import java.io.FileNotFoundException;
 
 /**
@@ -29,9 +30,9 @@ public class Puzzle5 extends javax.swing.JFrame {
     public Puzzle5() {
         initComponents();
         setLocationRelativeTo(null);
+        printDisplayText("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle5.txt");
         
         // DOESNT work without direct file path. I AM NOT GOING INSANE IT DOESTN WORK. 
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle4.txt");
         
     }
 
@@ -44,20 +45,13 @@ public class Puzzle5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        DisplayTextArea = new javax.swing.JTextArea();
         AnswerTextField = new javax.swing.JTextField();
         AnswerCheckButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        DisplayTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-
-        DisplayTextArea.setEditable(false);
-        DisplayTextArea.setBackground(new java.awt.Color(0, 0, 0));
-        DisplayTextArea.setColumns(20);
-        DisplayTextArea.setForeground(new java.awt.Color(0, 153, 0));
-        DisplayTextArea.setRows(5);
-        jScrollPane1.setViewportView(DisplayTextArea);
 
         AnswerTextField.setBackground(new java.awt.Color(0, 0, 0));
         AnswerTextField.setForeground(new java.awt.Color(51, 102, 0));
@@ -74,22 +68,30 @@ public class Puzzle5 extends javax.swing.JFrame {
             }
         });
 
+        DisplayTextArea.setBackground(new java.awt.Color(0, 0, 0));
+        DisplayTextArea.setColumns(20);
+        DisplayTextArea.setForeground(new java.awt.Color(0, 102, 0));
+        DisplayTextArea.setRows(5);
+        jScrollPane2.setViewportView(DisplayTextArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(AnswerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AnswerCheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AnswerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AnswerCheckButton, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)))
                 .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AnswerTextField)
@@ -111,9 +113,12 @@ public class Puzzle5 extends javax.swing.JFrame {
              boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 5);
              
              if (cuurentStatus == true){
+                 AccountManeger.LevelSaver("6");
                  dispose();
              }
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(Puzzle5.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(Puzzle5.class.getName()).log(Level.SEVERE, null, ex);
         }
           
@@ -191,6 +196,6 @@ public class Puzzle5 extends javax.swing.JFrame {
     private javax.swing.JButton AnswerCheckButton;
     private javax.swing.JTextField AnswerTextField;
     private javax.swing.JTextArea DisplayTextArea;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

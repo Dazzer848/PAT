@@ -82,6 +82,7 @@ public class AccountManeger {
             Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
             
             String savedusernames = LineSC.next();
+            String savedPasswords = LineSC.next();
             
             int i = 1;
             System.out.println("" + i);
@@ -93,12 +94,14 @@ public class AccountManeger {
             if(savedusernames.equals(inputtedUsername)){
                 Display.setBackground(Color.red);
                 Display.setText("The username is already taken");
+                return false;
  
             }
             
             else{
+                
                 LoginDetailsOKAY = true;
-                return LoginDetailsOKAY;
+            
             }
     }
         
@@ -134,22 +137,25 @@ public class AccountManeger {
         while(fileSC.hasNextLine()){
             Scanner LineSC =  new Scanner(fileSC.nextLine()).useDelimiter("#");
             
+            
             String savedusernames = LineSC.next();
             String savedPasswords = LineSC.next();
             
-            if(!inputtedCodeName.equals(savedusernames)){
+            //if(!InputtedPassword.equals(savedPasswords) && !inputtedCodeName.equals(savedusernames)){
+               // Display.setBackground(Color.red);
+                //Display.setText("Both your password and username is incorrect");
+            //}
+            
+            if(!(inputtedCodeName.equals(savedusernames))){
+                System.out.println(inputtedCodeName + "\n" + savedusernames);
                 Display.setBackground(Color.red);
                 Display.setText("Your username is incorrect!");
             }
             
             else if(!InputtedPassword.equals(savedPasswords)){
+                System.out.println(InputtedPassword + "-----------------------------------------------\n" + savedPasswords);
                 Display.setBackground(Color.red);
                 Display.setText("Your Password is incorrect!");
-            }
-            
-            else if(!InputtedPassword.equals(savedPasswords) && !inputtedCodeName.equals(savedusernames)){
-                Display.setBackground(Color.red);
-                Display.setText("Both your password and username is incorrect");
             }
             
             

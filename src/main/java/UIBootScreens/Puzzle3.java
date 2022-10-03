@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import backend.AnswerChecker;
 import java.io.FileNotFoundException;
+import backend.AccountManeger;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Puzzle3 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         // DOESNT work without direct file path. I AM NOT GOING INSANE IT DOESTN WORK. 
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Puzzle3.txt");
+        printDisplayText("Data\\Puzzles\\Puzzle3.txt");
         
     }
 
@@ -111,9 +112,12 @@ public class Puzzle3 extends javax.swing.JFrame {
              boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 3);
              
              if (cuurentStatus == true){
+                 AccountManeger.LevelSaver("4");
                  dispose();
              }
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(Puzzle3.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(Puzzle3.class.getName()).log(Level.SEVERE, null, ex);
         }
           

@@ -6,6 +6,8 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.charset.Charset;
+import java.util.Locale;
 import java.util.Scanner;
 import javax.swing.JTextArea;
 
@@ -27,11 +29,10 @@ public class TextRenderer implements Runnable {
 
     @Override
     public void run() {
-
         try {
             File bootText = new File(filePath);
-
-            Scanner bootSC = new Scanner(bootText);
+            
+            Scanner bootSC = new Scanner(bootText, "UTF-8");
 
             String out = "";
 
@@ -46,10 +47,8 @@ public class TextRenderer implements Runnable {
             
             
 
-        } catch (InterruptedException e) {
-
-        } catch (FileNotFoundException e) {
-
+        } catch (InterruptedException | FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 

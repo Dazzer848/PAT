@@ -41,7 +41,7 @@ public class Desktop extends javax.swing.JFrame {
         GoogleChromeButton = new javax.swing.JButton();
         PuzzleButton = new javax.swing.JButton();
         TrainingProgramButton = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        NotesButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,9 +69,9 @@ public class Desktop extends javax.swing.JFrame {
 
         TrainingProgramButton.setText("Training");
 
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        NotesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                NotesButtonActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class Desktop extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE)
                                 .addComponent(jLabel1))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(NotesButton)
                                 .addGap(0, 300, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
@@ -131,7 +131,7 @@ public class Desktop extends javax.swing.JFrame {
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
                                 .addGap(42, 42, 42)
@@ -160,13 +160,13 @@ public class Desktop extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void NotesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotesButtonActionPerformed
         try {
             new Notes().setVisible(true);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_NotesButtonActionPerformed
 
     private void GoogleChromeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoogleChromeButtonActionPerformed
         
@@ -227,9 +227,9 @@ public class Desktop extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GoogleChromeButton;
     private javax.swing.JLabel GoogleLabel;
+    private javax.swing.JButton NotesButton;
     private javax.swing.JButton PuzzleButton;
     private javax.swing.JLabel TrainingProgramButton;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
