@@ -22,6 +22,7 @@ public class Desktop extends javax.swing.JFrame {
      */
     public Desktop() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -43,6 +44,7 @@ public class Desktop extends javax.swing.JFrame {
         TrainingProgramButton = new javax.swing.JLabel();
         NotesButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,32 +52,41 @@ public class Desktop extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 0, 102));
         kGradientPanel1.setName("o"); // NOI18N
 
-        jLabel5.setText("wow");
+        jLabel5.setText("Desktop");
 
         GoogleLabel.setForeground(new java.awt.Color(255, 255, 255));
         GoogleLabel.setText("Google Chrome");
 
+        GoogleChromeButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\src\\main\\resources\\Images\\Google Chrome LOGO.png")); // NOI18N
         GoogleChromeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoogleChromeButtonActionPerformed(evt);
             }
         });
 
+        PuzzleButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\src\\main\\resources\\Images\\Puzzle_Logo-removebg-preview.png")); // NOI18N
         PuzzleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PuzzleButtonActionPerformed(evt);
             }
         });
 
+        TrainingProgramButton.setBackground(new java.awt.Color(0, 0, 153));
+        TrainingProgramButton.setForeground(new java.awt.Color(255, 255, 255));
         TrainingProgramButton.setText("Training");
 
+        NotesButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\src\\main\\resources\\Images\\NotesLogo.png")); // NOI18N
         NotesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotesButtonActionPerformed(evt);
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Notes");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Seal_of_the_Federal_Bureau_of_Investigation.svg.png"))); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -84,65 +95,64 @@ public class Desktop extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(GoogleLabel))
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(GoogleChromeButton)))
-                .addGap(3, 3, 3)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(24, 24, 24)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PuzzleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(TrainingProgramButton)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE)
-                                .addComponent(jLabel1))
+                                .addComponent(GoogleLabel)
+                                .addGap(92, 92, 92)
+                                .addComponent(jLabel2))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(NotesButton)
-                                .addGap(0, 300, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE))
+                                .addComponent(GoogleChromeButton)
+                                .addGap(63, 63, 63)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PuzzleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(TrainingProgramButton))
+                                    .addComponent(NotesButton))))
+                        .addGap(15, 15, 15)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addGap(137, 137, 137)
+                                .addComponent(jLabel3))))
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel4)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(393, 393, 393))
+                        .addGap(343, 343, 343)
+                        .addComponent(jLabel5)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel4)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel3))
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(GoogleChromeButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(GoogleLabel)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(GoogleLabel))
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(NotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
-                                .addGap(42, 42, 42)
+                                .addComponent(jLabel2)))
+                        .addGap(19, 19, 19)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
                                 .addComponent(PuzzleButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TrainingProgramButton))))
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel4)))
+                                .addComponent(TrainingProgramButton))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -150,11 +160,15 @@ public class Desktop extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 395, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,18 +179,10 @@ public class Desktop extends javax.swing.JFrame {
             new Notes().setVisible(true);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_NotesButtonActionPerformed
-
-    private void GoogleChromeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoogleChromeButtonActionPerformed
-        
-        // NB THE CHROME DOESNT WORK!
-        try {
-            java.awt.Desktop.getDesktop().open(new File("Google\\Chrome\\Application\\chrome.exe"));
         } catch (IOException ex) {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_GoogleChromeButtonActionPerformed
+    }//GEN-LAST:event_NotesButtonActionPerformed
 
     private void PuzzleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PuzzleButtonActionPerformed
         
@@ -188,6 +194,16 @@ public class Desktop extends javax.swing.JFrame {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_PuzzleButtonActionPerformed
+
+    private void GoogleChromeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoogleChromeButtonActionPerformed
+
+        // NB THE CHROME DOESNT WORK!
+        try {
+            java.awt.Desktop.getDesktop().open(new File("Google\\Chrome\\Application\\chrome.exe"));
+        } catch (IOException ex) {
+            Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_GoogleChromeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +248,7 @@ public class Desktop extends javax.swing.JFrame {
     private javax.swing.JLabel TrainingProgramButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private keeptoo.KGradientPanel kGradientPanel1;

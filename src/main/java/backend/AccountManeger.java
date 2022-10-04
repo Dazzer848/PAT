@@ -175,11 +175,15 @@ public class AccountManeger {
         public static void LevelSaver(String currentLevel) throws FileNotFoundException, IOException{
             
             Scanner CurrentUserSC = new Scanner(new File("Data\\AccountManegerDATA\\CurrentUser.txt"));
+            //Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\AccountsWithLevels.txt"));
+            
+            // GENERATES MULTIPL NAMES IN THE FILE NEED IT TO ONLY MAKE 1
             FileWriter writer = new FileWriter("Data//AccountManegerDATA//AccountsWithLevels.txt", true);
             PrintWriter pw = new PrintWriter(writer);
             
             String currentUser = CurrentUserSC.next();
             System.out.println(currentUser);
+            
             
             String out = currentUser + "#" + currentLevel + "#\n";
             pw.print(out);

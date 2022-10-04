@@ -109,7 +109,7 @@ public class Puzzle2 extends javax.swing.JFrame {
 
           
         try {
-             boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), false, 2);
+             boolean cuurentStatus = AnswerChecker.checkAnswer(AnswerTextField.getText(), true, 2);
              
              if (cuurentStatus == true){
                  AccountManeger.LevelSaver("3");

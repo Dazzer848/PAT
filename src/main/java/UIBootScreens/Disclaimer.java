@@ -25,7 +25,7 @@ public class Disclaimer extends javax.swing.JFrame {
      */
     public Disclaimer() {
         initComponents();
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Responses\\NDA.txt");
+        printDisplayText("Data\\Responses\\NDA.txt");
         DisclaimerCheckBoxThread();
     }
 

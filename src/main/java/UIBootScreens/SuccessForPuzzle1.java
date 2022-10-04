@@ -17,7 +17,8 @@ public class SuccessForPuzzle1 extends javax.swing.JFrame {
      */
     public SuccessForPuzzle1() {
         initComponents();
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Responses\\IntroductionText.txt");
+        setLocationRelativeTo(null);
+        printDisplayText("Data\\Responses\\IntroductionText.txt");
     }
 
     /**

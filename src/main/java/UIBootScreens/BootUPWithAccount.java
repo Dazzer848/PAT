@@ -18,7 +18,7 @@ public class BootUPWithAccount extends javax.swing.JFrame {
     public BootUPWithAccount() {
         initComponents();
         setLocationRelativeTo(null);
-        printDisplayText("C:\\Users\\User\\Documents\\NetBeansProjects\\PAT\\Data\\Responses\\BootText.txt");
+        printDisplayText("Data\\Responses\\BootText.txt");
         
     }
 

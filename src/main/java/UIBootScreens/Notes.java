@@ -5,6 +5,7 @@
 package UIBootScreens;
 import backend.NoteManager;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,8 +18,9 @@ public class Notes extends javax.swing.JFrame {
     /**
      * Creates new form Notes
      */
-    public Notes() throws FileNotFoundException {
+    public Notes() throws FileNotFoundException, IOException {
         initComponents();
+        setLocationRelativeTo(null);
         NoteManager.ReturnNotes(NotePad);
         
     }
@@ -87,6 +89,8 @@ public class Notes extends javax.swing.JFrame {
             dispose();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Notes.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Notes.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -124,6 +128,8 @@ public class Notes extends javax.swing.JFrame {
                 try {
                     new Notes().setVisible(true);
                 } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Notes.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
                     Logger.getLogger(Notes.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

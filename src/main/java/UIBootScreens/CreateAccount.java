@@ -27,6 +27,7 @@ public class CreateAccount extends javax.swing.JFrame {
      */
     public CreateAccount() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
