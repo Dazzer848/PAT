@@ -49,6 +49,7 @@ public class Disclaimer extends javax.swing.JFrame {
         LossOfLimbs = new javax.swing.JCheckBox();
         Censorship = new javax.swing.JCheckBox();
         ToHaveAGoodTime = new javax.swing.JCheckBox();
+        ISaidIwantOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +98,13 @@ public class Disclaimer extends javax.swing.JFrame {
 
         ToHaveAGoodTime.setText("TO HAVE A GOOD TIME");
 
+        ISaidIwantOut.setText("I SAID I WANT OUT!");
+        ISaidIwantOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ISaidIwantOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,7 +119,8 @@ public class Disclaimer extends javax.swing.JFrame {
                     .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ISaidIwantOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,7 +142,9 @@ public class Disclaimer extends javax.swing.JFrame {
                 .addComponent(ToHaveAGoodTime)
                 .addGap(108, 108, 108)
                 .addComponent(Agree)
-                .addGap(78, 78, 78))
+                .addGap(18, 18, 18)
+                .addComponent(ISaidIwantOut)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +195,11 @@ public class Disclaimer extends javax.swing.JFrame {
         dispose();
         new LogIn().setVisible(true);
     }//GEN-LAST:event_AgreeActionPerformed
+
+    private void ISaidIwantOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ISaidIwantOutActionPerformed
+        dispose();
+        new LogIn().setVisible(true);
+    }//GEN-LAST:event_ISaidIwantOutActionPerformed
         private void printDisplayText(String File) {
 
         TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
@@ -243,6 +259,7 @@ public class Disclaimer extends javax.swing.JFrame {
     private javax.swing.JCheckBox Censorship;
     private javax.swing.JCheckBox Death;
     private javax.swing.JTextArea DisplayTextArea;
+    private javax.swing.JButton ISaidIwantOut;
     private javax.swing.JCheckBox LossOfLimbs;
     private javax.swing.JCheckBox LossOrHarm;
     private javax.swing.JCheckBox NDA;

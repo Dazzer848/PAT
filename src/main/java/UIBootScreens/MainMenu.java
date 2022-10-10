@@ -16,6 +16,7 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        setLocationRelativeTo(null);
         
     }
 
@@ -34,7 +35,7 @@ public class MainMenu extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         NewPlayer = new javax.swing.JButton();
         Contimue = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        HeadingLable = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -45,9 +46,10 @@ public class MainMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 0, 0));
-        kGradientPanel1.setkStartColor(new java.awt.Color(51, 51, 51));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 0, 102));
+        kGradientPanel1.setkStartColor(new java.awt.Color(0, 0, 204));
 
+        NewPlayer.setBackground(new java.awt.Color(0, 0, 0));
         NewPlayer.setText("NEW PLAYER");
         NewPlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +57,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Contimue.setBackground(new java.awt.Color(0, 0, 0));
         Contimue.setText("CONTINUE");
         Contimue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,9 +65,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Welcome To Project SCS");
+        HeadingLable.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        HeadingLable.setForeground(new java.awt.Color(255, 255, 255));
+        HeadingLable.setText("Welcome To Project SCS");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
@@ -78,14 +81,14 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(150, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(HeadingLable)
                 .addGap(130, 130, 130))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addComponent(HeadingLable)
                 .addGap(75, 75, 75)
                 .addComponent(NewPlayer)
                 .addGap(33, 33, 33)
@@ -155,8 +158,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Contimue;
+    private javax.swing.JLabel HeadingLable;
     private javax.swing.JButton NewPlayer;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

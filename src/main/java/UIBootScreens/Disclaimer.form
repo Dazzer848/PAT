@@ -74,6 +74,7 @@
                       <Component id="LossOfLimbs" max="32767" attributes="0"/>
                       <Component id="Censorship" max="32767" attributes="0"/>
                       <Component id="ToHaveAGoodTime" max="32767" attributes="0"/>
+                      <Component id="ISaidIwantOut" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -98,7 +99,9 @@
                   <Component id="ToHaveAGoodTime" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   <Component id="Agree" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="ISaidIwantOut" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,6 +157,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="TO HAVE A GOOD TIME"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ISaidIwantOut">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="I SAID I WANT OUT!"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ISaidIwantOutActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

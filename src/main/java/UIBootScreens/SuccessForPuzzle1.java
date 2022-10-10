@@ -96,6 +96,7 @@ public class SuccessForPuzzle1 extends javax.swing.JFrame {
     }//GEN-LAST:event_DisclaimerYESbuttonActionPerformed
 
     private void LeaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveButtonActionPerformed
+        new Disclaimer().setVisible(true);
         dispose();
         // MAYBE add in spooky video or somethinhg.
     }//GEN-LAST:event_LeaveButtonActionPerformed
