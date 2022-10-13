@@ -90,6 +90,7 @@ public class BootScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bootButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bootButtonActionPerformed
+        //Setting the puzzle visible
         new Puzzle1().setVisible(true);
         dispose();
         

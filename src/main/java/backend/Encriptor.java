@@ -26,10 +26,12 @@ import javax.crypto.NoSuchPaddingException;
 // Doesnt work, cant call it and need help making it able to encript any answer.
 public class Encriptor implements Runnable{
     
-    File Answer;
+    private String AnswersFile;
+    private boolean Todo;
     
-    public Encriptor(File Answer1) {
-        Answer = Answer1;
+    public Encriptor(String Answer1, boolean todo) {
+        this.AnswersFile = Answer1;
+        this.Todo = todo;
         
     }
     
@@ -40,14 +42,17 @@ public class Encriptor implements Runnable{
     @Override
     public void run() {
         try {
-            File Answer1 = new File("Data//Test.txt");
+            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+            SecretKey myDesKey = keygenerator.generateKey();
+            if(Todo == true){
+                
+            
+            File Answer1 = new File(AnswersFile);
             
             Scanner AnsSC = new Scanner(Answer1);
             
-            String ans = AnsSC.next();
+            String ans = AnsSC.nextLine();
             
-            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
-            SecretKey myDesKey = keygenerator.generateKey();
             
             Cipher desCipher;
             desCipher = Cipher.getInstance("DES");
@@ -59,11 +64,46 @@ public class Encriptor implements Runnable{
 
             String encriptedAns = new String(textEncrypted);
             
-            FileWriter Writer = new FileWriter("Data//Answers//Answer 1.txt");
+            FileWriter Writer = new FileWriter(Answer1);
             Writer.write(encriptedAns);
             Writer.close();
             
             System.out.println(encriptedAns);
+            
+            
+            }
+            
+            if(Todo == false){
+                                
+            
+            File Answer1 = new File(AnswersFile);
+            
+            Scanner AnsSC = new Scanner(Answer1);
+            
+            String ans = AnsSC.nextLine();
+            
+            
+            Cipher desCipher;
+            desCipher = Cipher.getInstance("DES");
+            
+            byte[] Answer = ans.getBytes("UTF8");
+            
+            desCipher.init(Cipher.DECRYPT_MODE, myDesKey);
+            byte[] textEncrypted = desCipher.doFinal(Answer);
+
+            String encriptedAns = new String(textEncrypted);
+            
+            FileWriter Writer = new FileWriter(Answer1);
+            Writer.write(encriptedAns);
+            Writer.close();
+            
+            System.out.println(encriptedAns);
+            
+            
+            
+                
+            }
+            
             
             
             

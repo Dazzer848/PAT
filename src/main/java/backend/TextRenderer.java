@@ -4,6 +4,10 @@
  */
 package backend;
 
+
+//Importing all dependancys
+
+//NB THIS WAS A COLLABERATION BETWEEN MYSELF AND MR B.
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.charset.Charset;

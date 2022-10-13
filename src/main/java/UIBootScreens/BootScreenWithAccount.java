@@ -90,6 +90,7 @@ public class BootScreenWithAccount extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bootButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bootButtonActionPerformed
+        // Setting the boot screen to visible
         new BootUPWithAccount().setVisible(true);
         dispose();
         

@@ -18,6 +18,8 @@ public class BootUPWithAccount extends javax.swing.JFrame {
     public BootUPWithAccount() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        //Using the TextRenderer method to output the stored String.
         printDisplayText("Data\\Responses\\BootText.txt");
         
     }
@@ -78,6 +80,7 @@ public class BootUPWithAccount extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BootButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BootButtonActionPerformed
+        //Setting log In to true
         new LogIn().setVisible(true);
         dispose();
     }//GEN-LAST:event_BootButtonActionPerformed
@@ -86,6 +89,7 @@ public class BootUPWithAccount extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
+    //Declaring and creating a new object from the TextRenderer class
     private void printDisplayText(String File) {
 
         TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);

@@ -25,7 +25,10 @@ public class Disclaimer extends javax.swing.JFrame {
      */
     public Disclaimer() {
         initComponents();
+        //Begins Rendering the saved text using the TextRenderer Class
         printDisplayText("Data\\Responses\\NDA.txt");
+        
+        // Allows the UI boxes to appear in stages.
         DisclaimerCheckBoxThread();
     }
 
@@ -121,7 +124,7 @@ public class Disclaimer extends javax.swing.JFrame {
                     .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ISaidIwantOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +141,7 @@ public class Disclaimer extends javax.swing.JFrame {
                 .addComponent(LossOfLimbs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Censorship)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ToHaveAGoodTime)
                 .addGap(108, 108, 108)
                 .addComponent(Agree)
@@ -152,18 +155,19 @@ public class Disclaimer extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -200,7 +204,10 @@ public class Disclaimer extends javax.swing.JFrame {
         dispose();
         new LogIn().setVisible(true);
     }//GEN-LAST:event_ISaidIwantOutActionPerformed
-        private void printDisplayText(String File) {
+        
+    
+    //Creating an object using the TextRenderer class
+    private void printDisplayText(String File) {
 
         TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
 
@@ -211,7 +218,8 @@ public class Disclaimer extends javax.swing.JFrame {
 
        
     }
-        
+    
+    //Creating a new objext uysing the thread
     private void DisclaimerCheckBoxThread(){
         DisclaimerBoxThread DisclaimerBoxs = new DisclaimerBoxThread(NDA, LossOrHarm, Death, Painetc, LossOfLimbs, Censorship, ToHaveAGoodTime);
         

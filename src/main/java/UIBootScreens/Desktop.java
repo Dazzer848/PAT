@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import backend.AccountManeger;
+import backend.TextRenderer;
+import backend.Encriptor;
 
 /**
  *
@@ -176,7 +178,10 @@ public class Desktop extends javax.swing.JFrame {
 
     private void NotesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotesButtonActionPerformed
         try {
+            //Setting The notes to visible.
             new Notes().setVisible(true);
+            encriptor("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Answers\\Test.txt", true);
+            encriptor("C:\\Users\\darrenl\\Documents\\NetBeansProjects\\PAT\\Data\\Puzzles\\Answers\\Test.txt", false);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -189,6 +194,7 @@ public class Desktop extends javax.swing.JFrame {
         
         
         try {
+            //Loads the level which the current account is stored on and boots the according puzzle
             AccountManeger.LevelLoader();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
@@ -204,8 +210,18 @@ public class Desktop extends javax.swing.JFrame {
             Logger.getLogger(Desktop.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_GoogleChromeButtonActionPerformed
+    
+    private void encriptor(String File, boolean decript) {
 
-    /**
+        Encriptor enc = new Encriptor(File, decript);
+
+        Thread thread = new Thread(enc);
+        
+        thread.start();
+        
+
+       
+    }/**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -11,8 +11,11 @@ import java.util.logging.Logger;
 import javax.swing.JTextArea;
 import backend.AccountManeger;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import static java.lang.Thread.sleep;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 
@@ -185,10 +188,30 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
         try {
+            //Getting the boolean for which the AccountManeger.newUser retruns and running the checks and actions according to the data inputted.
             boolean accountCreated = AccountManeger.newUser(CodeName.getText(), PasswordTextField.getText(), ConfirmTextField.getText(), DisplayTextArea);
             
+            //Setting the current user to the user which is using.
             if(accountCreated == true){
+                /*
+                Scanner AccountsSC = new Scanner("Data//AccountManegerDATA//AccountsWithLevels.txt");
+                String out = "";
+                String toAdd = AccountsSC.next();
+                
+                while(AccountsSC.hasNext()){
+                    out = out + toAdd;
+                }
+                
+                
                 AccountManeger.MakeCurrentUser(CodeName.getText());
+                
+                FileWriter NewAccountWriter = new FileWriter("Data//AccountManegerDATA//AccountsWithLevels.txt");
+                
+                PrintWriter NewAccountPW = new PrintWriter(NewAccountWriter);
+                NewAccountPW.print(out + "\n" + CodeName.getText() + "#" + 1 + "#\n");
+                NewAccountPW.close();
+                
+                */
                 new BootScreen().setVisible(true);
                 dispose();
                 

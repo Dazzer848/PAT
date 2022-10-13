@@ -4,6 +4,8 @@
  */
 package backend;
 
+
+//Importing all dependancys.
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -14,6 +16,7 @@ import javax.swing.JCheckBox;
  * @author darrenl
  */
 public class DisclaimerBoxThread implements Runnable{
+    
     private JCheckBox NDA;
     private JCheckBox LossOrHarm;
     private JCheckBox Death;
