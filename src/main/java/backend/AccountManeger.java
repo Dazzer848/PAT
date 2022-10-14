@@ -61,7 +61,7 @@ public class AccountManeger {
         
         //This is the correct condition and the account will be created, The Print Writer writes the inputted username and password to the permenant storage aswell as returning True for the acocunted created boolean.
         else{
-            String out = inputtedCodeName + "#" + inputtedPassword + "#" + "\n";
+            String out = "\n" + inputtedCodeName + "#" + inputtedPassword + "#";
             pw.print(out);        
             pw.close();
             
@@ -224,7 +224,7 @@ public class AccountManeger {
                 if(accountName.equals(currentUser)){
                     
                     
-                    String toChange = accountName +"#" + currentLevel +"#\n";
+                    String toChange = "\n" + accountName +"#" + currentLevel +"#";
                     out = out + toChange;
                     
                 
