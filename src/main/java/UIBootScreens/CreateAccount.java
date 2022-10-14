@@ -191,11 +191,13 @@ public class CreateAccount extends javax.swing.JFrame {
             //Getting the boolean for which the AccountManeger.newUser retruns and running the checks and actions according to the data inputted.
             boolean accountCreated = AccountManeger.newUser(CodeName.getText(), PasswordTextField.getText(), ConfirmTextField.getText(), DisplayTextArea);
             
+            AccountManeger.MakeCurrentUser(CodeName.getText());
+            /*
+            String out = "";
             //Setting the current user to the user which is using.
             if(accountCreated == true){
-                /*
+                
                 Scanner AccountsSC = new Scanner("Data//AccountManegerDATA//AccountsWithLevels.txt");
-                String out = "";
                 String toAdd = AccountsSC.next();
                 
                 while(AccountsSC.hasNext()){
@@ -210,12 +212,12 @@ public class CreateAccount extends javax.swing.JFrame {
                 PrintWriter NewAccountPW = new PrintWriter(NewAccountWriter);
                 NewAccountPW.print(out + "\n" + CodeName.getText() + "#" + 1 + "#\n");
                 NewAccountPW.close();
-                
                 */
+                
                 new BootScreen().setVisible(true);
                 dispose();
                 
-            }
+            //}
             
         } catch (IOException ex) {
             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
