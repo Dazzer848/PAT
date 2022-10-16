@@ -34,23 +34,23 @@ public class Notes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        NotePadHeader = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         NotePad = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        SaveNotesButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Notes!");
+        NotePadHeader.setText("Notes!");
 
         NotePad.setColumns(20);
         NotePad.setRows(5);
         jScrollPane1.setViewportView(NotePad);
 
-        jButton1.setText("SAVE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SaveNotesButton.setText("SAVE");
+        SaveNotesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SaveNotesButtonActionPerformed(evt);
             }
         });
 
@@ -61,29 +61,29 @@ public class Notes extends javax.swing.JFrame {
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addGap(326, 326, 326)
-                .addComponent(jLabel1)
+                .addComponent(NotePadHeader)
                 .addContainerGap(352, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SaveNotesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(NotePadHeader)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jButton1)
+                .addComponent(SaveNotesButton)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SaveNotesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveNotesButtonActionPerformed
         try {
             NoteManager.SaveNotes(NotePad);
             dispose();
@@ -93,7 +93,7 @@ public class Notes extends javax.swing.JFrame {
             Logger.getLogger(Notes.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SaveNotesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,8 +138,8 @@ public class Notes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea NotePad;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel NotePadHeader;
+    private javax.swing.JButton SaveNotesButton;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

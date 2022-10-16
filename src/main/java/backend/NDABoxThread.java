@@ -15,7 +15,7 @@ import javax.swing.JCheckBox;
  *
  * @author darrenl
  */
-public class DisclaimerBoxThread implements Runnable{
+public class NDABoxThread implements Runnable{
     
     private JCheckBox NDA;
     private JCheckBox LossOrHarm;
@@ -26,7 +26,7 @@ public class DisclaimerBoxThread implements Runnable{
     private JCheckBox ToHaveAGoodTime;
 
     
-    public DisclaimerBoxThread(JCheckBox NDA, JCheckBox LossOrHarm, JCheckBox Death, JCheckBox PainAndMurder, JCheckBox LossOfLimbs, JCheckBox Censorship, JCheckBox ToHaveAGoodTime){
+    public NDABoxThread(JCheckBox NDA, JCheckBox LossOrHarm, JCheckBox Death, JCheckBox PainAndMurder, JCheckBox LossOfLimbs, JCheckBox Censorship, JCheckBox ToHaveAGoodTime){
         this.NDA = NDA;
         this.LossOrHarm = LossOrHarm;
         this.Death = Death;
@@ -51,35 +51,35 @@ public class DisclaimerBoxThread implements Runnable{
 
         
         try {
-            Thread.sleep(100);
+            Thread.sleep(10000);
             NDA.setVisible(true);
             boolean NDAt = NDA.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             LossOrHarm.setVisible(true);
             boolean LossOrHarmT= LossOfLimbs.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             Death.setVisible(true);
             boolean DeathT = Death.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             PainAndMuder.setVisible(true);
             boolean PainAndMurderT = PainAndMuder.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             LossOfLimbs.setVisible(true);
             boolean LossOfLimbsT = LossOfLimbs.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             Censorship.setVisible(true);
             boolean CensorshipT = Censorship.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             ToHaveAGoodTime.setVisible(true);
             boolean ToHaeAGoodTimeT = ToHaveAGoodTime.isSelected();
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             
             
             
             
             
         } catch (InterruptedException ex) {
-            Logger.getLogger(DisclaimerBoxThread.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NDABoxThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         

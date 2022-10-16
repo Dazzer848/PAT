@@ -5,31 +5,20 @@
 package UIBootScreens;
 
 import backend.TextRenderer;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import backend.DisclaimerBoxThread;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
 
 /**
  *
- * @author darrenl
+ * @author User
  */
-
-// WHEN ALL BOXES CHECKEd OPEN UP LOGIN
 public class Disclaimer extends javax.swing.JFrame {
 
     /**
-     * Creates new form Disclaimer
+     * Creates new form SuccessForBootUpPuzzle
      */
     public Disclaimer() {
         initComponents();
-        //Begins Rendering the saved text using the TextRenderer Class
-        printDisplayText("Data\\Responses\\NDA.txt");
-        
-        // Allows the UI boxes to appear in stages.
-        DisclaimerCheckBoxThread();
+        setLocationRelativeTo(null);
+        printDisplayText("Data\\Responses\\IntroductionText.txt");
     }
 
     /**
@@ -42,174 +31,78 @@ public class Disclaimer extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        DisplayTextArea = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        NDA = new javax.swing.JCheckBox();
-        LossOrHarm = new javax.swing.JCheckBox();
-        Death = new javax.swing.JCheckBox();
-        Painetc = new javax.swing.JCheckBox();
-        Agree = new javax.swing.JButton();
-        LossOfLimbs = new javax.swing.JCheckBox();
-        Censorship = new javax.swing.JCheckBox();
-        ToHaveAGoodTime = new javax.swing.JCheckBox();
-        ISaidIwantOut = new javax.swing.JButton();
+        TextDisplay = new javax.swing.JTextArea();
+        DisclaimerYESbutton = new javax.swing.JButton();
+        LeaveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        DisplayTextArea.setColumns(20);
-        DisplayTextArea.setRows(5);
-        jScrollPane1.setViewportView(DisplayTextArea);
+        TextDisplay.setBackground(new java.awt.Color(255, 255, 255));
+        TextDisplay.setColumns(20);
+        TextDisplay.setForeground(new java.awt.Color(0, 0, 0));
+        TextDisplay.setRows(5);
 
-        NDA.setText("Our NDA");
-        NDA.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                NDAItemStateChanged(evt);
-            }
-        });
-        NDA.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                NDAStateChanged(evt);
-            }
-        });
-        NDA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NDAMouseClicked(evt);
-            }
-        });
-
-        LossOrHarm.setText("Loss Or Harm");
-
-        Death.setText("Death");
-
-        Painetc.setText("Pain and Possible Murder");
-
-        Agree.setText("AGREE");
-        Agree.addActionListener(new java.awt.event.ActionListener() {
+        DisclaimerYESbutton.setText("To the DISCLAIMER");
+        DisclaimerYESbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgreeActionPerformed(evt);
+                DisclaimerYESbuttonActionPerformed(evt);
             }
         });
 
-        LossOfLimbs.setText("Loss of Limbs");
-        LossOfLimbs.addActionListener(new java.awt.event.ActionListener() {
+        LeaveButton.setText("Nevermind i want out of this hell hole");
+        LeaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LossOfLimbsActionPerformed(evt);
+                LeaveButtonActionPerformed(evt);
             }
         });
-
-        Censorship.setText("Censorship");
-
-        ToHaveAGoodTime.setText("TO HAVE A GOOD TIME");
-
-        ISaidIwantOut.setText("I SAID I WANT OUT!");
-        ISaidIwantOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ISaidIwantOutActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NDA)
-                    .addComponent(LossOrHarm)
-                    .addComponent(Death)
-                    .addComponent(Painetc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Agree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LossOfLimbs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Censorship, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ToHaveAGoodTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ISaidIwantOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NDA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LossOrHarm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Death)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Painetc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LossOfLimbs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Censorship)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ToHaveAGoodTime)
-                .addGap(108, 108, 108)
-                .addComponent(Agree)
-                .addGap(18, 18, 18)
-                .addComponent(ISaidIwantOut)
-                .addGap(38, 38, 38))
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(223, Short.MAX_VALUE)
+                .addComponent(LeaveButton)
+                .addGap(220, 220, 220))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(DisclaimerYESbutton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(TextDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
+                .addComponent(DisclaimerYESbutton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LeaveButton)
+                .addGap(18, 18, 18))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(TextDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LossOfLimbsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LossOfLimbsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LossOfLimbsActionPerformed
-
-    private void NDAStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_NDAStateChanged
-        
-        
-        
-    }//GEN-LAST:event_NDAStateChanged
-
-    private void NDAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NDAMouseClicked
-
-        
-    }//GEN-LAST:event_NDAMouseClicked
-
-    private void NDAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_NDAItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NDAItemStateChanged
-
-    private void AgreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgreeActionPerformed
-        
-        // NEED TO CHECK IF ALL BOXES ARE CHECKED1!!!
-        //if(NDAStateChanged(evt))
+    private void DisclaimerYESbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisclaimerYESbuttonActionPerformed
+        new NDA().setVisible(true);
         dispose();
-        new LogIn().setVisible(true);
-    }//GEN-LAST:event_AgreeActionPerformed
+    }//GEN-LAST:event_DisclaimerYESbuttonActionPerformed
 
-    private void ISaidIwantOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ISaidIwantOutActionPerformed
+    private void LeaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveButtonActionPerformed
+        new NDA().setVisible(true);
         dispose();
-        new LogIn().setVisible(true);
-    }//GEN-LAST:event_ISaidIwantOutActionPerformed
-        
-    
-    //Creating an object using the TextRenderer class
-    private void printDisplayText(String File) {
+        // MAYBE add in spooky video or somethinhg.
+    }//GEN-LAST:event_LeaveButtonActionPerformed
+        private void printDisplayText(String File) {
 
-        TextRenderer renderer = new TextRenderer(DisplayTextArea, 10, File);
+        TextRenderer renderer = new TextRenderer(TextDisplay, 10, File);
 
         Thread thread = new Thread(renderer);
         
@@ -217,15 +110,6 @@ public class Disclaimer extends javax.swing.JFrame {
         
 
        
-    }
-    
-    //Creating a new objext uysing the thread
-    private void DisclaimerCheckBoxThread(){
-        DisclaimerBoxThread DisclaimerBoxs = new DisclaimerBoxThread(NDA, LossOrHarm, Death, Painetc, LossOfLimbs, Censorship, ToHaveAGoodTime);
-        
-        Thread DisclaimerBoxThread = new Thread(DisclaimerBoxs);
-        
-        DisclaimerBoxThread.start();
     }
     /**
      * @param args the command line arguments
@@ -253,6 +137,9 @@ public class Disclaimer extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Disclaimer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -263,17 +150,9 @@ public class Disclaimer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agree;
-    private javax.swing.JCheckBox Censorship;
-    private javax.swing.JCheckBox Death;
-    private javax.swing.JTextArea DisplayTextArea;
-    private javax.swing.JButton ISaidIwantOut;
-    private javax.swing.JCheckBox LossOfLimbs;
-    private javax.swing.JCheckBox LossOrHarm;
-    private javax.swing.JCheckBox NDA;
-    private javax.swing.JCheckBox Painetc;
-    private javax.swing.JCheckBox ToHaveAGoodTime;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton DisclaimerYESbutton;
+    private javax.swing.JButton LeaveButton;
+    private javax.swing.JTextArea TextDisplay;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

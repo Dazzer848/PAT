@@ -111,7 +111,7 @@ public class Puzzle1 extends javax.swing.JFrame {
             
             if(result == true){
                 AccountManeger.LevelSaver("2");
-                new SuccessForPuzzle1().setVisible(true);
+                new Disclaimer().setVisible(true);
                 dispose();
             }
         } catch (FileNotFoundException ex) {

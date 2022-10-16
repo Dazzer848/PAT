@@ -182,21 +182,24 @@ public class AccountManeger {
         Scanner fileSC = new Scanner(new File("Data\\AccountManegerDATA\\AccountsWithLevels.txt"));
 
         String out = "";
-
+        
+        // checking to see which accounts are registered
         while (fileSC.hasNext()) {
 
             Scanner LineSc = new Scanner(fileSC.nextLine()).useDelimiter("#");
 
             String accountName = LineSc.next();
             int Level = LineSc.nextInt();
-
+            
+            // this check is seeing if the account is already registered in the data base
             if (accountName.equals(currentUser)) {
 
                 String toChange =  accountName + "#" + currentLevel;
                 out = out + toChange;
                 
                 found = true;
-
+                
+            //if the acocunt is not registered in the database    
             } else {
 
                 out = out + accountName + "#" + Level + "\n";
@@ -214,10 +217,10 @@ public class AccountManeger {
         }
         
         FileWriter writer = new FileWriter("Data//AccountManegerDATA//AccountsWithLevels.txt", false);
-        PrintWriter pw = new PrintWriter(writer);
+        PrintWriter fileWriter = new PrintWriter(writer);
 
-        pw.print(out);
-        pw.close();
+        fileWriter.print(out);
+        fileWriter.close();
 
     }
 

@@ -39,7 +39,7 @@ public class LogIn extends javax.swing.JFrame {
         CodeNameTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         PasswordTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        LogOnButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Display = new javax.swing.JTextArea();
 
@@ -62,10 +62,10 @@ public class LogIn extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password:");
 
-        jButton1.setText("LOG ON");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        LogOnButton.setText("LOG ON");
+        LogOnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LogOnButtonActionPerformed(evt);
             }
         });
 
@@ -95,7 +95,7 @@ public class LogIn extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(175, 175, 175))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(LogOnButton)
                         .addGap(256, 256, 256))))
         );
         kGradientPanel1Layout.setVerticalGroup(
@@ -114,7 +114,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
+                .addComponent(LogOnButton)
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -132,7 +132,7 @@ public class LogIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LogOnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOnButtonActionPerformed
         try {
             boolean LogInStatus = AccountManeger.LogIn(CodeNameTextField.getText(),PasswordTextField.getText(), Display);
             
@@ -146,7 +146,7 @@ public class LogIn extends javax.swing.JFrame {
             Logger.getLogger(LogIn.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LogOnButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,8 +186,8 @@ public class LogIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CodeNameTextField;
     private javax.swing.JTextArea Display;
+    private javax.swing.JButton LogOnButton;
     private javax.swing.JTextField PasswordTextField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

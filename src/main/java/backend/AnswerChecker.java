@@ -36,29 +36,29 @@ public class AnswerChecker {
         String answer = "";
         
         //Scannes the answers stored in permenant storage (Answers.txt)
-        Scanner scan = new Scanner(new File("Data//Puzzles//Answers//Answers.txt"));
-        PrintWriter writer = new PrintWriter(new File("Data//LevelSaved.txt"));
+        Scanner answerScannner = new Scanner(new File("Data//Puzzles//Answers//Answers.txt"));
+        PrintWriter levelSaverwriter = new PrintWriter(new File("Data//LevelSaved.txt"));
 
         
       //Scans each answer and each time the scanner moves the level increases due to it being the next answer.
         for(int i = 0; i < level;i++){
-            if(scan.hasNextLine()){
-                answer = scan.nextLine();
+            if(answerScannner.hasNextLine()){
+                answer = answerScannner.nextLine();
             }
         }
         
         //If not caps sensitive check answer
         if(cap && answer.equalsIgnoreCase(Inpuutedanswer)){
-            writer.print(level);
-            writer.flush();
+            levelSaverwriter.print(level);
+            levelSaverwriter.flush();
             result  = true;
             return result;
         }
         
         //If it is caps sensitive check answer
         else if(answer.equals(Inpuutedanswer)){
-            writer.print(level);
-            writer.flush();
+            levelSaverwriter.print(level);
+            levelSaverwriter.flush();
             result = true;
             return result;
         }

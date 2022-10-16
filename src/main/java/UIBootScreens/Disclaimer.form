@@ -24,22 +24,36 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane1" pref="937" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="223" max="32767" attributes="0"/>
+              <Component id="LeaveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
+              <Component id="DisclaimerYESbutton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Component id="TextDisplay" alignment="0" pref="672" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="339" max="32767" attributes="0"/>
+              <Component id="DisclaimerYESbutton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="LeaveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane1" min="-2" pref="696" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Component id="TextDisplay" alignment="0" pref="411" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,124 +65,34 @@
       </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="DisplayTextArea">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel1">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="NDA" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="LossOrHarm" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Death" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Painetc" alignment="0" max="32767" attributes="0"/>
-                      <Component id="Agree" alignment="0" max="32767" attributes="0"/>
-                      <Component id="LossOfLimbs" max="32767" attributes="0"/>
-                      <Component id="Censorship" max="32767" attributes="0"/>
-                      <Component id="ToHaveAGoodTime" max="32767" attributes="0"/>
-                      <Component id="ISaidIwantOut" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="NDA" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="LossOrHarm" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Death" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Painetc" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="LossOfLimbs" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Censorship" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="ToHaveAGoodTime" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                  <Component id="Agree" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="ISaidIwantOut" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="NDA">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Our NDA"/>
-          </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="NDAItemStateChanged"/>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="NDAStateChanged"/>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NDAMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="LossOrHarm">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Loss Or Harm"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="Death">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Death"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="Painetc">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pain and Possible Murder"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="Agree">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="AGREE"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgreeActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="LossOfLimbs">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Loss of Limbs"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LossOfLimbsActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="Censorship">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Censorship"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="ToHaveAGoodTime">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TO HAVE A GOOD TIME"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="ISaidIwantOut">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="I SAID I WANT OUT!"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ISaidIwantOutActionPerformed"/>
-          </Events>
-        </Component>
-      </SubComponents>
-    </Container>
+    <Component class="javax.swing.JTextArea" name="TextDisplay">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="columns" type="int" value="20"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="rows" type="int" value="5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="DisclaimerYESbutton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="To the DISCLAIMER"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DisclaimerYESbuttonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="LeaveButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nevermind i want out of this hell hole"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LeaveButtonActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
