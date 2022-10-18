@@ -179,6 +179,9 @@ public class CodeNameGen extends javax.swing.JFrame {
 
     private void GenerateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateButtonActionPerformed
         
+        
+        
+        //Gets the Random amount of letters the user wants
         int length = (int) LenghtSpinner.getValue();
         String CodeName = "";
         String squad = (String) SquadComboBox.getSelectedItem();
@@ -190,6 +193,7 @@ public class CodeNameGen extends javax.swing.JFrame {
             
         
         else{
+            //Creates the code name
             for(int i = 0; i < length; i++){
                 char Character = (char) (Math.random() * (90 - 65) + 65);
                 CodeName = CodeName + Character;

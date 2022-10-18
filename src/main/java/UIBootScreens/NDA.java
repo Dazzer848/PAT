@@ -195,8 +195,6 @@ public class NDA extends javax.swing.JFrame {
 
     private void AgreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgreeActionPerformed
         
-        // NEED TO CHECK IF ALL BOXES ARE CHECKED1!!!
-        //if(NDAStateChanged(evt))
         dispose();
         new LogIn().setVisible(true);
     }//GEN-LAST:event_AgreeActionPerformed
